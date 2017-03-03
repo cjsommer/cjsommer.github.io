@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Painting with PowerShell: SQL Server Administration
+title: Painting with PowerShell SQL Server Administration
 date: 2016-06-06 13:04
 author: cjsommer@gmail.com
 comments: true
