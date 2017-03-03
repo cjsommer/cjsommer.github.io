@@ -15,3 +15,4 @@ This blog post is just a quick follow from my presentation last week for the SQL
 Here is a link to the <a href="https://www.youtube.com/watch?v=I-HHDG8iQ0E&feature=youtu.be" target="_blank">YouTube Video</a> of the presentation.
 
 Check at the bottom of this blog post for a zip file containing the PPT as well as all of the demo scripts. Enjoy and happy scripting!
+
