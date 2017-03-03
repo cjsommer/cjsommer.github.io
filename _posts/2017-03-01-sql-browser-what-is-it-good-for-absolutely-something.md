@@ -115,7 +115,7 @@ End {
 }
 ```
 
-```PowerShell
+```powershell
 C:\Users\cjsommer\Documents\WindowsPowerShell [master +1 ~2 -1 !]> .\Get-SQLBrowserResponse.ps1 pluto
 
 ServerName;PLUTO;InstanceName;NOTAPLANET;IsClustered;No;Version;11.0.5058.0;tcp;5150
@@ -129,7 +129,7 @@ As I mentioned earlier, the SQL Browser service has to be accessible from the cl
 
 Here is the PowerShell script I used for my tests.
 
-```PowerShell
+```powershell
 function Test-SQLBrowserConnection
 {
     [cmdletbinding()]
@@ -206,7 +206,7 @@ SQL Browser service is running and accessible on UDP 1434
 SQL Server listening on default port TCP 1433
 SQL Server named instance
 
-```PowerShell
+```powershell
 
 Write-Host "Test Case #1"
 Test-SQLBrowserConnection -Computer mercury # Test SQL Browser service
@@ -230,7 +230,7 @@ SQL Browser service is not running and therefor inaccessible
 SQL Server listening on default port TCP 1433
 SQL Server named instance
 
-```PowerShell
+```powershell
 
 Write-Host "Test Case #2"
 Test-SQLBrowserConnection -Computer earth # Test SQL Browser service
@@ -256,7 +256,7 @@ SQL Browser service is not running and therefore inaccessible
 SQL Server listening on non-default port TCP 5150
 SQL Server named instance
 
-```PowerShell
+```powershell
 
 Write-Host "Test Case #3"
 Test-SQLBrowserConnection -Computer pluto # Test SQL Browser service
