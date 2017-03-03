@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [PowerShell, SQL Server]
 ---
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSV-TwitterPost.jpg"><img class="alignright size-full wp-image-351" src="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSV-TwitterPost.jpg" alt="ExportCSV-TwitterPost" width="266" height="269" /></a>
+<a href="/img/2015/04/ExportCSV-TwitterPost.jpg"><img class="alignright size-full wp-image-351" src="/img/2015/04/ExportCSV-TwitterPost.jpg" alt="ExportCSV-TwitterPost" width="266" height="269" /></a>
 
 So here we are at week 4 of the #SQLNewBlogger challenge. Earlier in the week I responded to the following post on Twitter #sqlhelp, and after I posted my response I thought that this would make a fun blog post. I have used PowerShell to export SQL Server tables to CSV files before so I know that my suggestion works, but I was wondering if I could determine how performance would be for a larger table.
 <h2>Test Details</h2>
@@ -19,7 +19,7 @@ So here we are at week 4 of the #SQLNewBlogger challenge. Earlier in the week I 
 <h2>Test Platform</h2>
 The test platform is my old laptop so nothing fancy. It shouldn't be hard to push this bad boy past its limits.
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSV-TestPlatform.jpg"><img class="alignnone size-full wp-image-355" src="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSV-TestPlatform.jpg" alt="ExportCSV-TestPlatform" width="560" height="163" /></a>
+<a href="/img/2015/04/ExportCSV-TestPlatform.jpg"><img class="alignnone size-full wp-image-355" src="/img/2015/04/ExportCSV-TestPlatform.jpg" alt="ExportCSV-TestPlatform" width="560" height="163" /></a>
 <ul>
 	<li>Windows 7 Professional SP1</li>
 	<li>SQL Server 2012</li>
@@ -89,7 +89,7 @@ Here is the query I used to calculate the run statistics
   FROM [ExportCSVTesting].[dbo].[RunStats]
   GROUP BY Counter</pre>
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSVStats.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/04/ExportCSVStats.jpg" alt="ExportCSVStats" width="451" height="228" class="alignright size-full wp-image-378" /></a>
+<a href="/img/2015/04/ExportCSVStats.jpg"><img src="/img/2015/04/ExportCSVStats.jpg" alt="ExportCSVStats" width="451" height="228" class="alignright size-full wp-image-378" /></a>
 
 ...and here are the results. As you can see the number of rows exported didn't seem to affect the overall performance of the export. I only pushed it to 2,000,000 rows on my laptop because it ran out of memory resources after that, but I was surprised none the less. I really thought the rows_per_ms (number of rows exported per millisecond) might drop off but it never did. It consistently got 10-12 rows per millisecond not matter how big the table was.
 

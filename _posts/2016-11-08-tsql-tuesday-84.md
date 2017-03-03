@@ -6,9 +6,9 @@ author: cjsommer@gmail.com
 comments: true
 categories: [Presentations, SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
+<img src="/img/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
 <p>This month&#39;s #tsql2sday is being hosted by Andy Yun (<a href="https://sqlbek.wordpress.com/2016/10/25/t-sql-tuesday-84-growing-new-speakers/">b</a>|<a href="https://twitter.com/SQLBek">t</a>) and is about helping new speakers.</p>
-<p><img src="http://www.cjsommer.com/wp-content/uploads/2016/11/img_582091ea39f8b.png" alt=""></p>
+<p><img src="/img/2016/11/img_582091ea39f8b.png" alt=""></p>
 <p>I have only been speaking a couple years so I still consider myself a new speaker. I have given a number of presentations for my Toastmasters club. I&#39;ve spoken at my local PASS chapter meeting. I&#39;ve spoken at 3 SQL Saturday events (Rochester once and Albany twice), with more planned for 2017. I&#39;ve also presented for the PowerShell Virtual Chapter. So I&#39;m not brand new, but I don&#39;t have what I would consider a ton of experience doing this. What I do know is that speaking is something I enjoy.</p>
 <p>I was inspired to speak after attending PASS Summit 2013. Watching all of the speakers talk about their passion made me realize that I also had something to share. This was my &quot;aha&quot; moment! Standing up in front of a group of people and talking used to terrify me, but it has quickly become one of the most rewarding experiences of my career. If you&#39;ve been toying with the idea of speaking I encourage you to give it a try!</p>
 <hr>

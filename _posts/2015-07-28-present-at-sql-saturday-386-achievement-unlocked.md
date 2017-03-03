@@ -8,7 +8,7 @@ categories: [PowerShell, Presentations, SQL Server]
 ---
 <hr>
 <h5>SQL Saturday #386 (Albany, NY) - My first SQL Saturday Session</h5>
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/07/sqlsat386run-225x300.jpg" alt="sqlsat386run" width="225" height="300" class="alignright size-medium wp-image-846" />
+<img src="/img/2015/07/sqlsat386run-225x300.jpg" alt="sqlsat386run" width="225" height="300" class="alignright size-medium wp-image-846" />
 So that picture to the right is me out front of the SUNY Albany campus around 6:45 AM. It was a nice cool morning and I decided to start my day with a nice 5k run around the campus. Just something to get the blood flowing and wake me up a little before I headed over to SQL Saturday.
 
 I have nothing but wonderful things to say about the SQL Saturday 386 leadership and the army of volunteers they brought along. It was a very well run event. The venue was nice, everything was very well organized, the people were amazingly helpful and friendly, and it made the perfect place for me to turn my presentation up a notch. It's amazing how much of a calming effect can be felt when you are surrounded by such an inviting and amazing group of people. That's really something that I love about the SQL Server community in general. 

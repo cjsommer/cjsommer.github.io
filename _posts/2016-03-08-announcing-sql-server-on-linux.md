@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2016/03/sql-linux-300x250.png" alt="sql-linux" width="300" height="250" class="alignright size-medium wp-image-1217" />
+<img src="/img/2016/03/sql-linux-300x250.png" alt="sql-linux" width="300" height="250" class="alignright size-medium wp-image-1217" />
 Yes, you read that right. SQL Server will be ported to Linux. Here's the Blog post from Scott Guthrie.
 
 <a href="http://blogs.microsoft.com/blog/2016/03/07/announcing-sql-server-on-linux/" target="_blank">http://blogs.microsoft.com/blog/2016/03/07/announcing-sql-server-on-linux/</a>

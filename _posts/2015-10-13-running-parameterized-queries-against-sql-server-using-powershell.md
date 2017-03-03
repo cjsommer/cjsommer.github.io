@@ -14,7 +14,7 @@ I went back and looked at some of the old PowerShell scripts that I had written 
 This blog post is about how I changed my thinking and my methods.
 
 <h3>A little about my test configuration</h3>
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMeTables.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMeTables.jpg" alt="DeleteMeTables" width="334" height="178" class="alignright size-full wp-image-998" /></a>
+<a href="/img/2015/10/DeleteMeTables.jpg"><img src="/img/2015/10/DeleteMeTables.jpg" alt="DeleteMeTables" width="334" height="178" class="alignright size-full wp-image-998" /></a>
 
 I am running PowerShell 4.0 along with SQL Server 2012 on my laptop, so nothing special there really. Each test script is a PowerShell function that performs a SELECT statement against [person].[person] table in the AdventureWorks2012 database. The function also accepts a parameter for 'LastName' which is used in the search predicate. Pretty straight forward and very common. You'll see the actual scripts below in all of the code snippets.
 
@@ -59,9 +59,9 @@ $result = Select-UnparameterizedSQLPS -LastName "Duffy' ; DROP TABLE [DeleteMe] 
 $result | Format-Table -AutoSize
 </pre>
 The SQL Query:
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-UnparameterizedSQLPS.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-UnparameterizedSQLPS.jpg" alt="Select-UnparameterizedSQLPS" width="465" height="224" class="alignnone size-full wp-image-1001" /></a>
+<a href="/img/2015/10/Select-UnparameterizedSQLPS.jpg"><img src="/img/2015/10/Select-UnparameterizedSQLPS.jpg" alt="Select-UnparameterizedSQLPS" width="465" height="224" class="alignnone size-full wp-image-1001" /></a>
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMe_Missing.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMe_Missing.jpg" alt="DeleteMe_Missing" width="331" height="181" class="alignright size-full wp-image-997" /></a>
+<a href="/img/2015/10/DeleteMe_Missing.jpg"><img src="/img/2015/10/DeleteMe_Missing.jpg" alt="DeleteMe_Missing" width="331" height="181" class="alignright size-full wp-image-997" /></a>
 
 It is clear from the SQL output what this was going to do, and sure enough, the DeleteMe table is now gone. Not only is this query vulnerable to SQL injection, but it also does not promote plan reuse because the T-SQL includes the literal value in the search predicate. 
 <br  clear="all"/><hr>
@@ -102,9 +102,9 @@ $result = Select-ParameterizedSQLPS -LastName "'Duffy' ; DROP TABLE [DeleteMe] ;
 $result | Format-Table -AutoSize
 </pre> 
 The SQL Query:
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-ParameterizedSQLPS.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-ParameterizedSQLPS.jpg" alt="Select-ParameterizedSQLPS" width="405" height="210" class="alignnone size-full wp-image-1000" /></a>
+<a href="/img/2015/10/Select-ParameterizedSQLPS.jpg"><img src="/img/2015/10/Select-ParameterizedSQLPS.jpg" alt="Select-ParameterizedSQLPS" width="405" height="210" class="alignnone size-full wp-image-1000" /></a>
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMe_Missing.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMe_Missing.jpg" alt="DeleteMe_Missing" width="331" height="181" class="alignright size-full wp-image-997" /></a>
+<a href="/img/2015/10/DeleteMe_Missing.jpg"><img src="/img/2015/10/DeleteMe_Missing.jpg" alt="DeleteMe_Missing" width="331" height="181" class="alignright size-full wp-image-997" /></a>
 
 It was not clear from the raw T-SQL output what this query was going to do because it was parameterized. This was just one version of how I tried to use sp_executesql to get around the injection attack, but as I found out there really is no good way to do it using Invoke-Sqlcmd. After running this script my DeleteMe table was gone. This appears to be a huge limitation in Invoke-Sqlcmd for running ad-hoc queries.
 
@@ -146,9 +146,9 @@ $result = Select-ParameterizedADOLib -LastName "Duffy' ; DROP TABLE [DeleteMe] ;
 $result | Format-Table -AutoSize
 </pre>
 The SQL Query:
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-ParameterizedADOLib.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/Select-ParameterizedADOLib.jpg" alt="Select-ParameterizedADOLib" width="389" height="238" class="alignnone size-full wp-image-999" /></a>
+<a href="/img/2015/10/Select-ParameterizedADOLib.jpg"><img src="/img/2015/10/Select-ParameterizedADOLib.jpg" alt="Select-ParameterizedADOLib" width="389" height="238" class="alignnone size-full wp-image-999" /></a>
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMeTables.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/10/DeleteMeTables.jpg" alt="DeleteMeTables" width="334" height="178" class="alignright size-full wp-image-998" /></a>
+<a href="/img/2015/10/DeleteMeTables.jpg"><img src="/img/2015/10/DeleteMeTables.jpg" alt="DeleteMeTables" width="334" height="178" class="alignright size-full wp-image-998" /></a>
 Once again it isn't really clear what would happen based on the raw T-SQL that was output from the function, but after running the query I did find that my DeleteMe table remained intact. This implementation protected me from that SQL injection and because it is a parameterized query it also helps with plan reuse.
 <br  clear="all"/><hr>
 <h3>Conclusion</h3>

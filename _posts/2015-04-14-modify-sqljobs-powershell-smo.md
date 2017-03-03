@@ -45,14 +45,14 @@ The properties contain all of the possible configuration items that we can manip
 <pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Get the JobStep object properties"># Display all of the properties that come with the JobStep object
 $JobStep | Get-Member -MemberType Property
 </pre>
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/JobStepProperties.jpg"><img class="alignnone size-full wp-image-160" src="http://www.cjsommer.com/wp-content/uploads/2015/04/JobStepProperties.jpg" alt="JobStepProperties" width="965" height="519" /></a>
+<a href="/img/2015/04/JobStepProperties.jpg"><img class="alignnone size-full wp-image-160" src="/img/2015/04/JobStepProperties.jpg" alt="JobStepProperties" width="965" height="519" /></a>
 
 <hr />
 
 The one method I am using in the script below is the Alter() method. After you set the properties to the values you want, you have to run the Alter() method to apply the changes. Without the Alter() they will go back to what they were previously. Also listed below are all of the other methods that come with the JobStep object.
 <pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Get the JobStep object methods">$JobStep | Get-Member -MemberType Method
 </pre>
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/JobStepMethods.jpg"><img class="alignnone size-full wp-image-159" src="http://www.cjsommer.com/wp-content/uploads/2015/04/JobStepMethods.jpg" alt="JobStepMethods" width="964" height="458" /></a>
+<a href="/img/2015/04/JobStepMethods.jpg"><img class="alignnone size-full wp-image-159" src="/img/2015/04/JobStepMethods.jpg" alt="JobStepMethods" width="964" height="458" /></a>
 
 <hr />
 

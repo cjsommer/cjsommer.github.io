@@ -10,7 +10,7 @@ March 26th, 2015, a date which will live in infamy!
 
 Well, at least for me it will. March 26th, 2015 marks the date I gave my first presentation at my local SQL PASS user group meeting. Here is the picture as proof!
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/03/intro-sql-automation.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/03/intro-sql-automation-300x225.jpg" alt="intro-sql-automation" width="300" height="225" class="alignnone size-medium wp-image-78" /></a>
+<a href="/img/2015/03/intro-sql-automation.jpg"><img src="/img/2015/03/intro-sql-automation-300x225.jpg" alt="intro-sql-automation" width="300" height="225" class="alignnone size-medium wp-image-78" /></a>
 
 I was very excited to be able to share some of my knowledge with everyone who showed up. I hope to be able to do it again some time. 
 

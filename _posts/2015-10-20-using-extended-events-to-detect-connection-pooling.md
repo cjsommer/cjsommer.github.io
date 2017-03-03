@@ -26,10 +26,10 @@ This was one of the first times I have used Extended Events for something other 
 <h3>First, I Needed a Way to Test Connection Pooling</h3>
 Once again I reached for my good friend <a href="http://www.datamanipulation.net/SQLQueryStress/" target="_blank">SQLQueryStress</a>. SQLQueryStress is written in .NET and gives me the ability to enable or disable connection pooling in the options menu which is just what the doctor ordered.
 
-<img class="alignnone size-full wp-image-1056 " src="http://www.cjsommer.com/wp-content/uploads/2015/10/img_561ee82ccbb9a.png" alt="" />
+<img class="alignnone size-full wp-image-1056 " src="/img/2015/10/img_561ee82ccbb9a.png" alt="" />
 
 I setup SQLQueryStress to connect to my local database server and run a simple query against the AdventureWorks2012 database. It is set to run 10 iterations across 5 different threads. This should produce 50 individual queries.
-<p id="YJiXxyu"><img class="alignnone size-full wp-image-1057 " src="http://www.cjsommer.com/wp-content/uploads/2015/10/img_561ee8adc70ab.png" alt="" /></p>
+<p id="YJiXxyu"><img class="alignnone size-full wp-image-1057 " src="/img/2015/10/img_561ee8adc70ab.png" alt="" /></p>
 
 <hr />
 
@@ -66,15 +66,15 @@ My test is setup. My XE session is ready to go. At this point I am ready to begi
 <ol>
 <li>
 Start the XE session. Right click on the ConnectionPooling session in SSMS and select "Start Session".
-<p><img alt='' class='alignnone size-full wp-image-1065 ' src='http://www.cjsommer.com/wp-content/uploads/2015/10/img_561eed80a4df6.png' /></p>
+<p><img alt='' class='alignnone size-full wp-image-1065 ' src='/img/2015/10/img_561eed80a4df6.png' /></p>
 </li>
 <li>
 Start the SQLQueryStress test. Its as simple as hitting the big "GO" button.
-<p><img class="alignnone size-full wp-image-1057 " src="http://www.cjsommer.com/wp-content/uploads/2015/10/img_561ee8adc70ab.png" alt="" /></p>
+<p><img class="alignnone size-full wp-image-1057 " src="/img/2015/10/img_561ee8adc70ab.png" alt="" /></p>
 </li>
 <li>
 Stop the XE session. Right click on the ConnectionPooling session in SSMS and select "Stop Session"
-<p><img alt='' class='alignnone size-full wp-image-1067 ' src='http://www.cjsommer.com/wp-content/uploads/2015/10/img_561eee22ad378.png' /></p>
+<p><img alt='' class='alignnone size-full wp-image-1067 ' src='/img/2015/10/img_561eee22ad378.png' /></p>
 </li>
 <li>Analyze the results. 
 <ol>
@@ -91,7 +91,7 @@ Stop the XE session. Right click on the ConnectionPooling session in SSMS and se
 
 <hr>
 <h3>Test Results: Connection Pooling Disabled in SQLQueryStress</h3>
-<img alt='' class='alignnone size-full wp-image-1088 ' src='http://www.cjsommer.com/wp-content/uploads/2015/10/img_561f0653f00cb.png' />
+<img alt='' class='alignnone size-full wp-image-1088 ' src='/img/2015/10/img_561f0653f00cb.png' />
 
 <ul>
 <li>".Net SqlClient Data Provider" is the client_app_name for SQLQueryStress. </li>
@@ -101,7 +101,7 @@ Stop the XE session. Right click on the ConnectionPooling session in SSMS and se
 
 <hr>
 <h3>Test Results: Connection Pooling Enabled in SQLQueryStress</h3>
-<img alt='' class='alignnone size-full wp-image-1089 ' src='http://www.cjsommer.com/wp-content/uploads/2015/10/img_561f06d038cc6.png' />
+<img alt='' class='alignnone size-full wp-image-1089 ' src='/img/2015/10/img_561f06d038cc6.png' />
 
 <ul>
 <li>Once again ".Net SqlClient Data Provider" is the client_app_name for SQLQueryStress. </li>

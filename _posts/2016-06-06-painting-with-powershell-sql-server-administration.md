@@ -6,11 +6,11 @@ author: cjsommer@gmail.com
 comments: true
 categories: [PowerShell, SQL Server]
 ---
-<a href="http://powershell.sqlpass.org/" target="_blank"><img alt='' class='alignright size-full wp-image-1286 ' src='http://www.cjsommer.com/wp-content/uploads/2016/06/img_5755ab6319cab.png' /></a>
+<a href="http://powershell.sqlpass.org/" target="_blank"><img alt='' class='alignright size-full wp-image-1286 ' src='/img/2016/06/img_5755ab6319cab.png' /></a>
 
 This blog post is just a quick follow from my presentation last week for the SQL PASS <a href="http://powershell.sqlpass.org/" target="_blank">PowerShell Virtual Chapter</a>.
 
-<a href="http://powershell.sqlpass.org/Home.aspx?EventID=4872" target="_blank"><img alt='' class='alignnone size-full wp-image-1287 ' src='http://www.cjsommer.com/wp-content/uploads/2016/06/img_5755abcee01da.png' /></a>
+<a href="http://powershell.sqlpass.org/Home.aspx?EventID=4872" target="_blank"><img alt='' class='alignnone size-full wp-image-1287 ' src='/img/2016/06/img_5755abcee01da.png' /></a>
 
 Here is a link to the <a href="https://www.youtube.com/watch?v=I-HHDG8iQ0E&feature=youtu.be" target="_blank">YouTube Video</a> of the presentation.
 

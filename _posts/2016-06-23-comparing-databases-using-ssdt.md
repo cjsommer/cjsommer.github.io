@@ -8,7 +8,7 @@ categories: [PowerShell, SQL Server]
 ---
 Another Twitter-born blog post! I love getting new ideas from the community. Real world ideas for solving real world problems!
 
-<a href="https://twitter.com/Kevin3NF/status/746002230969536512" target="_blank"><img alt='' class='alignright size-full wp-image-1295 ' src='http://www.cjsommer.com/wp-content/uploads/2016/06/img_576c0c44b47c0.png' /></a>
+<a href="https://twitter.com/Kevin3NF/status/746002230969536512" target="_blank"><img alt='' class='alignright size-full wp-image-1295 ' src='/img/2016/06/img_576c0c44b47c0.png' /></a>
 The original question was "<em>Does SQL Compare or others prods allow me to compare 1 "gold" db to the 57 "identical" databases in prod at once? asking for a friend ;)</em>". The original question and link to the twitter feed is off to the right. 
 
 The ask here was pretty straight forward. SQLCyclist needed to compare 57+ databases to one database which he considered his gold copy. Basically, how far have the schemas drifted from one another? I happen to use SSDT for doing something similar and I knew it might fit the bill for him. The script I do have includes some custom stuff for my applications that wouldn't be relevant, so I set out on a quest to see what I could come up with. 
@@ -17,7 +17,7 @@ If you haven't used SSDT you're missing out. It's a great tool provided by Micro
 
 So on my local SQL Server I made 2 identical copies of my AdventureWorks2012 database (rest in peace AW).
 
-<img alt='' class='alignnone size-full wp-image-1305 ' src='http://www.cjsommer.com/wp-content/uploads/2016/06/img_576c10b7a08b7.png' />
+<img alt='' class='alignnone size-full wp-image-1305 ' src='/img/2016/06/img_576c10b7a08b7.png' />
 
 And then I got scripting. Without going into too much detail, SSDT gives us a command line utility called sqlpackage.exe. One thing we get to do with sqlpackage is create a DACPAC. A DACPAC is a representation of our database schema. Another thing we can do with sqlpackage is compare database schemas and dacpacs, pretty cool. There'e a whole bunch of other things you can do with it, but I only used the export, script and deployreport parameters for this little script. If you want to read more about sqlpackage please go <a href="https://msdn.microsoft.com/en-us/hh550080(v=vs.103).aspx" target="_blank">https://msdn.microsoft.com/en-us/hh550080(v=vs.103).aspx</a>. Microsoft tells it better than I can.
 
@@ -113,7 +113,7 @@ Get-Date
 
 When I run it I wind up with 3 files in my ArtifactPath.
 
-<img alt='' class='alignnone size-full wp-image-1303 ' src='http://www.cjsommer.com/wp-content/uploads/2016/06/img_576c0f9a49366.png' />
+<img alt='' class='alignnone size-full wp-image-1303 ' src='/img/2016/06/img_576c0f9a49366.png' />
 
 <strong>AdventureWorks2012.dacpac</strong> is the DACPAC created by the export command inside sqlpackage. It contains the schema for my AdventureWorks2012 database.
 

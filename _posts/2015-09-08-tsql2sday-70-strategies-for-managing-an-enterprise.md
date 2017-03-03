@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" /></a>
+<a href="/img/2015/05/TSQLTuesday.jpg"><img src="/img/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" /></a>
 Thanks to MidnightDBA (<a href="http://www.midnightdba.com/" target="_blank">b</a>/<a href="https://twitter.com/MidnightDBA" target="_blank">t</a>) for hosting this month's #tsql2sday. 
 
 <a href="http://www.midnightdba.com/Jen/2015/09/time-for-t-sql-tuesday-70/" target="_blank">Strategies for managing an enterprise.</a>

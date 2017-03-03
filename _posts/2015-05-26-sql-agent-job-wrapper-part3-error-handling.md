@@ -129,8 +129,8 @@ I know that my cmdlet throws all of the errors that I expect because I tested it
 
 Below are the results of a successful SQL Agent job, and a failed SQL Agent job. In the failed job you will see that the error message describes exactly what went wrong and because of the SetShouldExit it can be trapped by an external scheduler to indicate a failure.
 <h5>Result from a Successful SQL Agent job</h5>
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/05/SQLAgent_SuccessfulJob.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/05/SQLAgent_SuccessfulJob.jpg" alt="SQLAgent_SuccessfulJob" width="649" height="193" class="alignnone size-full wp-image-584" /></a>
+<a href="/img/2015/05/SQLAgent_SuccessfulJob.jpg"><img src="/img/2015/05/SQLAgent_SuccessfulJob.jpg" alt="SQLAgent_SuccessfulJob" width="649" height="193" class="alignnone size-full wp-image-584" /></a>
 <h5>Result from a Failed SQL Agent job</h5>
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/05/SQLAgent_Wrapper_FailedJob.png"><img src="http://www.cjsommer.com/wp-content/uploads/2015/05/SQLAgent_Wrapper_FailedJob.png" alt="SQLAgent_Wrapper_FailedJob" width="922" height="248" class="alignnone size-full wp-image-610" /></a>
+<a href="/img/2015/05/SQLAgent_Wrapper_FailedJob.png"><img src="/img/2015/05/SQLAgent_Wrapper_FailedJob.png" alt="SQLAgent_Wrapper_FailedJob" width="922" height="248" class="alignnone size-full wp-image-610" /></a>
 <h5>Conclusion</h5>
 Wow this turned into a 3 part series, way more than I might have thought, but I wanted to break it down into smaller more digestible bites. I am hoping that I accomplished that. With PowerShell there are many ways to tackle a single problem. If you have another method that you'd like to share please feel free to add a comment below. I love questioning my methods and learning from others. As always, Happy Scripting!

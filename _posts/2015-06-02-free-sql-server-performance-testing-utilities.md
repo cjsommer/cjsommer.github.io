@@ -7,7 +7,7 @@ comments: true
 categories: [SQL Server]
 ---
 Did that say free? Why yes, yes it did! But don't let the price tag fool ya, these are some pretty nice little utilities.
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/05/free-tools-tweet.jpg"><img class="alignright size-full wp-image-644" src="http://www.cjsommer.com/wp-content/uploads/2015/05/free-tools-tweet.jpg" alt="free-tools-tweet" width="266" height="141" /></a>
+<a href="/img/2015/05/free-tools-tweet.jpg"><img class="alignright size-full wp-image-644" src="/img/2015/05/free-tools-tweet.jpg" alt="free-tools-tweet" width="266" height="141" /></a>
 Another blog post inspired by a question on Twitter.
 
 I went to SQL Saturday #383 a few weeks ago and noticed a handful of performance testing utilities being mentioned or used during many of the presentations. I have seen them all mentioned or used in demos before, but I have very little experience using them myself. I thought it would be nice to gather them all in one place for future reference, and I can definitely foresee a more in depth review of each down the road.

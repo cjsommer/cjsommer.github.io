@@ -152,7 +152,7 @@ $JobName = "TestJob"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
 </pre>
 
-And here are my results:<a href="http://www.cjsommer.com/wp-content/uploads/2015/05/SqlAgentWrapperOut.jpg"><img src="http://www.cjsommer.com/wp-content/uploads/2015/05/SqlAgentWrapperOut.jpg" alt="SqlAgentWrapperOut" width="516" height="178" class="alignnone size-full wp-image-519" /></a>
+And here are my results:<a href="/img/2015/05/SqlAgentWrapperOut.jpg"><img src="/img/2015/05/SqlAgentWrapperOut.jpg" alt="SqlAgentWrapperOut" width="516" height="178" class="alignnone size-full wp-image-519" /></a>
 
 <h2>Test it out for yourself</h2>
 Save the scripts above into the same directory. The test script is set to look for the cmdlet script in the same directory. You can test it against an existing job on your SQL Server or use the TestJob.sql to create the same one I used. Either way will work fine. The only script you should have to modify is the Test-Wrapper.ps1 script. Just set the SQLServer and JobName variables to one of your own SQL Server Jobs and let 'er rip!

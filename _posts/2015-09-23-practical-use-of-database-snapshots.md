@@ -37,7 +37,7 @@ CREATE DATABASE AdventureWorks2012_SnapShot
 </pre> 
 
 You will now find your snapshot under Database Snapshots in SSMS
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/09/DatabaseSnapshots.png"><img src="http://www.cjsommer.com/wp-content/uploads/2015/09/DatabaseSnapshots.png" alt="DatabaseSnapshots" width="302" height="59" class="alignnone size-full wp-image-933" /></a>
+<a href="/img/2015/09/DatabaseSnapshots.png"><img src="/img/2015/09/DatabaseSnapshots.png" alt="DatabaseSnapshots" width="302" height="59" class="alignnone size-full wp-image-933" /></a>
 
 <h3>Restoring from a Snapshot</h3>
 Restoring from a database snapshot is also a simple operation. SQL Server handles all of the dirty work and figures out what pages need to be written back to the data files from the snapshot files all behind the scenes. The syntax couldn't be much simpler really.

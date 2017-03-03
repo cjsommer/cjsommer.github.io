@@ -84,7 +84,7 @@ $JobHistory | Select-Object JobName,RunDate,$RunStatusColumn |
 
 So if I put all of those pieces together and I run it, here is the output that is generated for the instance I am running it against right now.
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/04/PrtScr.png"><img class="alignnone size-full wp-image-119" src="http://www.cjsommer.com/wp-content/uploads/2015/04/PrtScr.png" alt="PowerShell Output" width="661" height="161" /></a>
+<a href="/img/2015/04/PrtScr.png"><img class="alignnone size-full wp-image-119" src="/img/2015/04/PrtScr.png" alt="PowerShell Output" width="661" height="161" /></a>
 
 This is just a snippet of the output, but I am hoping you get the idea. If you run the script against one of your SQL Servers you should see all of the job history between the start and end dates you set. You can run it against a single server manually, or it can be used as the foundation for a more automated solution. It's really just the tip of the iceberg and ready to be molded to the way you want it to.
 

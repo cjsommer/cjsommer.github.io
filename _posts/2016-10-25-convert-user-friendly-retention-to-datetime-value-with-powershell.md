@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [PowerShell, SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/03/sql-posh-300x250.png" alt="sql-posh" width="300" height="250" class="alignright size-medium wp-image-179" />
+<img src="/img/2015/03/sql-posh-300x250.png" alt="sql-posh" width="300" height="250" class="alignright size-medium wp-image-179" />
 
 I think the title is fairly descriptive so let me put a little context around it for you. In my SQL Server environment we backup our databases to local disk. Unfortunately we don't have unlimited storage for backups, which means we have to delete the old backups on a regular basis. A very typical practice in the SQL DBA world.
 
@@ -65,16 +65,16 @@ This function accepts the -UserFriendlyRetention parameter and returns the datet
 You pass in a numeric value along with 1 of 4 different units of measure (h, d, w, m). Rather than try to elaborate further how about some examples with screenshots? I think it's pretty clear once you see how it works. 
 
 <h3>Ex. 24h = 24 hours</h3>
-<img alt='' class='alignnone size-full wp-image-1428 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_580f5ea7e2f1c.png' />
+<img alt='' class='alignnone size-full wp-image-1428 ' src='/img/2016/10/img_580f5ea7e2f1c.png' />
 
 <h3>Ex. 7d = 7 days</h3>
-<img alt='' class='alignnone size-full wp-image-1429 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_580f5ed294423.png' />
+<img alt='' class='alignnone size-full wp-image-1429 ' src='/img/2016/10/img_580f5ed294423.png' />
 
 <h3>Ex. 4w = 4 weeks</h3>
-<img alt='' class='alignnone size-full wp-image-1430 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_580f5ef646410.png' />
+<img alt='' class='alignnone size-full wp-image-1430 ' src='/img/2016/10/img_580f5ef646410.png' />
 
 <h3>Ex. 6m = 6 months</h3>
-<img alt='' class='alignnone size-full wp-image-1431 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_580f5f149db62.png' />
+<img alt='' class='alignnone size-full wp-image-1431 ' src='/img/2016/10/img_580f5f149db62.png' />
 
 Hopefully you get the picture. It's pretty straight forward and I think it accomplishes my goal of not having to fire up calc.exe (or take off your shoes *pew*) just to figure out your retention date. I'm sure there are plenty of other uses for this function and it could definitely be customized for other units of measure if you so desired. Feel free to use and enjoy, and let me know if you have any questions. 
 

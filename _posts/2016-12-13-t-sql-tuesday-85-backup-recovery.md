@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="" width="150" height="150" class="alignright size-full wp-image-504" />
+<img src="/img/2015/05/TSQLTuesday.jpg" alt="" width="150" height="150" class="alignright size-full wp-image-504" />
 <p>Shout out to Kenneth Fisher (<a href="https://sqlstudies.com/">b</a>|<a href="https://twitter.com/sqlstudent144">t</a>) for hosting this month&#39;s #tsql2sday. This month is about backup and recovery and here is a snippet from the invite:</p>
 <p><em>Backups are one of the most common things DBAs discuss, and they are at once one of the simplest and most complicated parts of our whole job. So let’s hear it for backup and recovery!</em></p>
 <p>You can see the whole post on his <a href="https://sqlstudies.com/2016/12/06/4169/">blog</a>.</p>

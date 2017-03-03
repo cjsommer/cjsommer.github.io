@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
+<img src="/img/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
 Thank you to SQLBalls ( <a href="http://www.sqlballs.com/"  target="_blank">b</a> | <a href="https://twitter.com/SQLBalls" target="_blank">t</a> ) for hosting this month's #tsql2sday. 
 
 <em>As you work with SQL Server look around you.  Is your environment Naughty or Nice?  If it is Naughty what’s wrong with it?  What would you do to fix it?  Do you have a scrooge that is giving you the Christmas chills?  Perhaps you have servers of past, present, and future haunting you.  Maybe you are looking at SQL Server 2016 like some bright shining star in the east.</em>
@@ -29,4 +29,4 @@ Nice DBA's dig a little deeper. They look into the SQL Agent job history to find
 These are very specific examples, both of which I have personally experienced. I hate finding time bombs. Alerts or issues that other people have worked on and opted to just treat the symptoms. Sure enough they come back to bite you in the ass, every...single...time. Treating the symptoms and alleviating the pain is always a good first step, but that's never where your investigation and problem resolution should end. Determining root cause is a huge step towards building a stable environment. 
 
 So be a nice DBA! Your teammates will thank you and you'll probably get something really sweet from the big guy!
-<img alt='' class='alignnone size-full wp-image-1166 ' src='http://www.cjsommer.com/wp-content/uploads/2015/12/img_5667870c3d4c1.png' />
+<img alt='' class='alignnone size-full wp-image-1166 ' src='/img/2015/12/img_5667870c3d4c1.png' />

@@ -6,7 +6,7 @@ author: cjsommer@gmail.com
 comments: true
 categories: [About Me, SQL Server]
 ---
-<img alt='' class='alignright size-full wp-image-1452 ' src='http://www.cjsommer.com/wp-content/uploads/2016/11/img_581aa51d28e34.png' />
+<img alt='' class='alignright size-full wp-image-1452 ' src='/img/2016/11/img_581aa51d28e34.png' />
 Got back from Summit on Saturday and I'm still totally in the moment. I came back with so many new ideas and so much good information on so many fronts, I don't know where to begin! So lets go back to the PASS Summit 2013.
 
 Summit 2013 in Charlotte, NC was my first and I remember it well. I went with 4 other people from my company but I was pretty new to the SQL PASS community (otherwise known as #sqlfamily). As a matter of fact I didn't even know what #sqlfamily was at this point. I went to all of the PASS sponsored events like the welcome reception, the vendor party and yes the NASCAR party (which being a NASCAR fan was awesome). I went to all of the sessions and generally hung out with the other people from my company. I did get a taste of the after-life a bit, but for the most part I stayed in my comfort zone. 

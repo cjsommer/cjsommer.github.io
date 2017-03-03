@@ -8,7 +8,7 @@ categories: [PowerShell]
 ---
 The question was this:
 
-<a href="http://www.cjsommer.com/wp-content/uploads/2015/03/New-TimeSpan.jpg"><img class="alignnone size-full wp-image-24" src="http://www.cjsommer.com/wp-content/uploads/2015/03/New-TimeSpan.jpg" alt="New-TimeSpan" width="265" height="133" /></a>
+<a href="/img/2015/03/New-TimeSpan.jpg"><img class="alignnone size-full wp-image-24" src="/img/2015/03/New-TimeSpan.jpg" alt="New-TimeSpan" width="265" height="133" /></a>
 
 This is just a quick/fast snippet in response to that question, but I can think of a ton of enhancements that could made. Hopefully it will be useful as a starting point for someone to customize for their own use.
 <pre class="theme:powershell-ise toolbar:1 scroll:true lang:ps decode:true nums:false ">function Convert-FriendlyTime

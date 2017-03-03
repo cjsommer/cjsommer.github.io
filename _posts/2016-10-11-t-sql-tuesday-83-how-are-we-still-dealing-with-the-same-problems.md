@@ -6,11 +6,11 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
+<img src="/img/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" />
 
 #TSQL2SDAY is a monthly blog party hosted by a different blogger each month. This blog party was started by Adam Machanic (<a href="http://sqlblog.com/blogs/adam_machanic/default.aspx" target="_blank">blog</a>|<a href="https://twitter.com/AdamMachanic" target="_blank">twitter</a>). You can take part by posting your own participating post that fits the topic of the month and follows the requirements below. Additionally, if you are interested in hosting a future T-SQL Tuesday, contact Adam Machanic on his blog.
 
-<a href="http://am2.co/2016/10/t-sql-tuesday-83/" target="_blank"><img alt='' class='alignnone size-full wp-image-1339 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_57fbc653ac62d.png' /></a>
+<a href="http://am2.co/2016/10/t-sql-tuesday-83/" target="_blank"><img alt='' class='alignnone size-full wp-image-1339 ' src='/img/2016/10/img_57fbc653ac62d.png' /></a>
 
 <hr div="clear">
 <h3>So why are we still dealing with the same problems after all these years?</h3>
@@ -28,7 +28,7 @@ Fast forward another 2 years. They decide to hire another DBA, but this time the
 
 Once again, a very extreme example, but I think it illustrates how a culture can just accept a problem as "normal" when they really shouldn't. The senior level DBA was just being lazy. Don't really know why but he never dug into the problem or he also would have noticed that it was an easy permanent fix. The first junior DBA just didn't know any better. Can't really fault him for that. Same for the second junior DBA as well since he was taught by the first junior DBA. The final more experienced DBA finally dug into it because she brought in other experiences and knowledge.
 
-<img alt='' class='alignright size-full wp-image-1343 ' src='http://www.cjsommer.com/wp-content/uploads/2016/10/img_57fd40a0ec86b.png' />
+<img alt='' class='alignright size-full wp-image-1343 ' src='/img/2016/10/img_57fd40a0ec86b.png' />
 
 I know I got to rambling a bit so what's my point? Stop making the alerts go away and start double-tapping your problems. If you have a recurring issue it means that there is more to be discovered before you can truly fix the problem. Dig into it. Your teammates will thank you.
 

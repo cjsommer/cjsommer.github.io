@@ -8,7 +8,7 @@ categories: [PowerShell, SQL Server]
 ---
 <h1>Using PowerShell and SMO to set MinServerMemory and MaxServerMemory Programatically</h1>
 
-<a href="https://sqlbek.wordpress.com/2015/07/06/invitation-to-t-sql-tuesday-68-just-say-no-to-defaults/" target="_blank"><img src="http://www.cjsommer.com/wp-content/uploads/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" /></a>
+<a href="https://sqlbek.wordpress.com/2015/07/06/invitation-to-t-sql-tuesday-68-just-say-no-to-defaults/" target="_blank"><img src="/img/2015/05/TSQLTuesday.jpg" alt="TSQLTuesday" width="150" height="150" class="alignright size-full wp-image-504" /></a>
 Here is a link to the official #tsql2sday invitation from <a href="https://sqlbek.wordpress.com/2015/07/06/invitation-to-t-sql-tuesday-68-just-say-no-to-defaults/" target="_blank">Andy Yun's Blog</a>. This month's subject is "Just Say No to Defaults". If you've read my blog at all you will know that I have a slight obsession with SQL Server and PowerShell. As far as I am concerned PowerShell is the new gold standard when it comes to scripting and automation in the Windows environment. Add a sprinkle of SQL Server with the SQL Server PowerShell module  (SQLPS) and you have a deadly combination as a DBA. 
 
 So lets start saying no to defaults! One setting I always change when I install SQL Server are the MinServerMemory and MaxServerMemory values. This blog post will demonstrate how to use PowerShell and SMO to set these values programmatically, based on the amount of RAM in the machine you are running it on. 
@@ -35,7 +35,7 @@ Next we need to find the correct configuration properties to work within SMO. I 
 # Find the correct configuration property for memory
 $SrvObject.Configuration | Get-Member *memory*
 </pre> 
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/07/tsql2sday68_getmemprop.jpg" alt="tsql2sday68_getmemprop" width="773" height="206" class="alignnone size-full wp-image-787" />
+<img src="/img/2015/07/tsql2sday68_getmemprop.jpg" alt="tsql2sday68_getmemprop" width="773" height="206" class="alignnone size-full wp-image-787" />
 
 <hr>
 <h3>Display the current MinServerMemory and MaxServerMemory Values</h3>
@@ -46,7 +46,7 @@ $SrvObject.Configuration.MinServerMemory
 $SrvObject.Configuration.MaxServerMemory 
 </pre> 
 
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/07/tsql2sday68_maxservermemory.png" alt="tsql2sday68_maxservermemory" width="393" height="138" class="alignnone size-full wp-image-790" />
+<img src="/img/2015/07/tsql2sday68_maxservermemory.png" alt="tsql2sday68_maxservermemory" width="393" height="138" class="alignnone size-full wp-image-790" />
 
 Only MaxServerMemory is shown in the output, but the MinServerMemory properties are identical. Actually, the properties for all of the SQL Server Configuration items are the same. They all contain the following 9 properties.
 <ul>
@@ -107,7 +107,7 @@ $SrvObject.Configuration.MinServerMemory
 
 The full script displays the MinServerMemory and MaxServerMemory configuration values after the modification so you can see that your script worked as expected.
 
-<img src="http://www.cjsommer.com/wp-content/uploads/2015/07/tsql2sday68_dynamic.png" alt="tsql2sday68_dynamic" width="399" height="277" class="alignnone size-full wp-image-818" />
+<img src="/img/2015/07/tsql2sday68_dynamic.png" alt="tsql2sday68_dynamic" width="399" height="277" class="alignnone size-full wp-image-818" />
 
 And there you have it. You can use PowerShell and SMO to set your MinServerMemory and MaxServerMemory settings based on the physical amount of RAM in your system. As a disclaimer, my calculations for MinServerMemory and MaxServerMemory is just what I used for this demo and in no way a standard for everything. I just needed a simple example to show. You could make the logic as simple or complex as you like. That part is up to you to figure out!
 

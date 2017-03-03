@@ -14,7 +14,7 @@ Lets see if I can explain it better in an example.
 
 I have a job called 'Test Job'. The steps that make up 'Test Job' aren't important for this blog post. I'm more focused on the schedule for this job. The screenshot below shows that the schedule for 'Test Job' is set to run every 5 minutes. Agree? Good.
 
-<img alt='' class='alignnone size-full wp-image-1540 ' src='http://www.cjsommer.com/wp-content/uploads/2017/02/img_5894b7b48e1b6.png' />
+<img alt='' class='alignnone size-full wp-image-1540 ' src='/img/2017/02/img_5894b7b48e1b6.png' />
 
 When I script out 'Test Job' in SSMS, this is what I get in the schedule section.
 
@@ -55,11 +55,11 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobschedule @job_id=@jobId, @name=N'Daily',
 
 The job schedule for 'My New Job' is set to run daily at 1:00 AM. If I look at the schedule for 'My New Job', it looks fine. Agree?
 
-<img alt='' class='alignnone size-full wp-image-1532 ' src='http://www.cjsommer.com/wp-content/uploads/2017/02/img_5894b01fcc2f9.png' />
+<img alt='' class='alignnone size-full wp-image-1532 ' src='/img/2017/02/img_5894b01fcc2f9.png' />
 
 But guess what else happened? Since I used the same schedule_uid in 'My New Job', it overwrote the schedule for 'Test Job' too.
 
-<img alt='' class='alignnone size-full wp-image-1533 ' src='http://www.cjsommer.com/wp-content/uploads/2017/02/img_5894b05d52d70.png' />
+<img alt='' class='alignnone size-full wp-image-1533 ' src='/img/2017/02/img_5894b05d52d70.png' />
 
 
 I'm hesitant to call this a bug, but I would have thought that sp_add_jobschedule would fail because a schedule with a matching schedule_uid already exists, but that's not the case. It just seems to overwrite the schedule details and move along, leaving DBAs to clean up the mess. 
