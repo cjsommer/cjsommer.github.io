@@ -50,7 +50,7 @@ I think it will make more sense if I show you what information the SQL Browser p
  .LINK
  http://www.sqlservercentral.com/blogs/sqlmanofmystery/2013/02/27/finding-sql-server-installs-using-powershell/
 
-#&gt;
+#>
 [cmdletbinding(
 	DefaultParameterSetName = '',
 	ConfirmImpact = 'low'
