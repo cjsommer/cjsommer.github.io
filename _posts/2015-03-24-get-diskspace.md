@@ -11,7 +11,8 @@ My cheap and dirty PowerShell script for dumping the disk space usage for a Wind
 It uses a simple WMI call to return a set of objects for you to use as you see fit. Most of the time I just pipe it to Format-Table to see the output, but it could be used for other things. Throw in a pipe to Where-Object and you could use it to monitor low disk space. Feel free to bind, spindle or mutilate as you see fit.
 
 It has been tested on Windows 2003 and above. If you're still using Windows 2000, I'm sorry. Good luck and have fun.
-```PowerShell
+
+```powershell
  .Notes
  NAME: Get-DiskSpace.ps1
  AUTHOR: Chris Sommer
@@ -52,6 +53,6 @@ select SystemName, Name, DriveType, FileSystem, FreeSpace, Capacity, Label
 
 Sample output from my local machine (machine names and user names blanked out)
 
-<a href="{{ site.baseurl }}/images/2015/03/Get-DiskSpace.ps1_.png">
-<img class="alignnone size-full wp-image-16" src="{{ site.baseurl }}/images/2015/03/Get-DiskSpace.ps1_.png" alt="Get-DiskSpace.ps1" width="640" height="106" />
+<a href="{{ site.baseurl }}/img/2015/03/Get-DiskSpace.ps1_.png">
+<img class="alignnone size-full wp-image-16" src="{{ site.baseurl }}/img/2015/03/Get-DiskSpace.ps1_.png" alt="Get-DiskSpace.ps1" width="640" height="106" />
 </a>
