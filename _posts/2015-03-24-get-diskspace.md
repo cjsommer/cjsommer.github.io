@@ -53,6 +53,6 @@ select SystemName, Name, DriveType, FileSystem, FreeSpace, Capacity, Label
 
 Sample output from my local machine (machine names and user names blanked out)
 
-<a href="{{ site.baseurl }}/img/2015/03/Get-DiskSpace.ps1_.png">
-<img class="alignnone size-full wp-image-16" src="{{ site.baseurl }}/img/2015/03/Get-DiskSpace.ps1_.png" alt="Get-DiskSpace.ps1" width="640" height="106" />
+<a href="/img/2015/03/Get-DiskSpace.ps1_.png">
+<img class="alignnone size-full wp-image-16" src="/img/2015/03/Get-DiskSpace.ps1_.png" alt="Get-DiskSpace.ps1" width="640" height="106" />
 </a>

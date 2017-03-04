@@ -13,6 +13,7 @@ There are a number of reasons why we automate processes, but generally speaking 
 OK, so we got that out of the way. We get it. Automation is having computers perform a repetitive task for us. So what about the title of the post? What is this about error handling and why is it so important?
 
 Automation is easy when everything just works. We press the button and the script roars to life. Files are moving between servers, databases are being updated in the cloud, results are being rolled up, reports are being generated, all while I sit back and enjoy a delicious cup of coffee from my french press. But that is not the world we live in. The computer world is a harsh one! Servers go down, the network is slow and firewalls block our every move! Those are just a few specific examples of what we might need to deal with, but you get the picture. With a manual process we get to decide what action to take next when things don't work quite as planned. With automation, we have to program that into our scripts. Anyone can write a script for the perfect world, but the best automated solutions are written to handle the real world.
+
 <h2>Understand the Methodologies</h2>
 Understand the error handling methodologies at your disposal, and that may be different depending on which technology you are using for your process. For example:
 <ol>

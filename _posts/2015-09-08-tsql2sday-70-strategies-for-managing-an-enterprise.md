@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TSQL2SDAY #70: Strategies for managing an enterprise
+title: TSQL2SDAY 70: Strategies for managing an enterprise
 date: 2015-09-08 14:11
 author: cjsommer@gmail.com
 comments: true

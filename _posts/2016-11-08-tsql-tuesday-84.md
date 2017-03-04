@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday #84: Growing New Speakers
+title: T-SQL Tuesday 84: Growing New Speakers
 date: 2016-11-08 09:00
 author: cjsommer@gmail.com
 comments: true

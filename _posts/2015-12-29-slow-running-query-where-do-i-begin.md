@@ -22,7 +22,8 @@ If you can't run spGetNames safely in production, get it from the plan cache. Th
 
 +EDIT: I'd like to thank Mike Fal (<a href="http://www.mikefal.net/" target="_blank">B</a>|<a href="https://twitter.com/Mike_Fal" target="_blank">T</a>) for helping point out that the plans that come from the plan cache are estimated plans. Most of the time they will be the same as the actual plan, but there times where that may not be true, but it's a very important point to note.
 
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Search plan cache for specific query text">SELECT  
+```sql
+SELECT  
      query_plan AS CompleteQueryPlan, 
      n.value('(@StatementText)[1]', 'VARCHAR(4000)') AS StatementText, 
      n.value('(@StatementOptmLevel)[1]', 'VARCHAR(25)') AS StatementOptimizationLevel, 
@@ -35,7 +36,8 @@ CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS eqp
 CROSS APPLY query_plan.nodes('/ShowPlanXML/BatchSequence/Batch/Statements/StmtSimple') AS qn(n) 
 WHERE n.value('(@StatementText)[1]', 'VARCHAR(4000)') 
     LIKE '%spGetNames%' -- Alter the search text to find your stored proc here
-</pre>
+```
+
 And here is the output. If you click on the Complete Query Plan XML field you will see the graphical query plan that came from the plan cache.
 <img class="alignnone size-full wp-image-1178 " src="/img/2015/12/slowquery_2.png" alt="" />
 

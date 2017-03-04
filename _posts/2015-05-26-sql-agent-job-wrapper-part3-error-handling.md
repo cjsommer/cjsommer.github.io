@@ -17,7 +17,8 @@ Now that we have the Start-SQLAgentJob cmdlet tested and working like we need, w
 <hr> 
 <h5>Start-SQLAgentJob.ps1</h5>
 So just a little review. Below is the Start-SQLAgentJob cmdlet. It does all of the heavy lifting in this whole process and is responsible for throwing errors when appropriate. All of the error generation functionality was tested as part of last week's blog post. Here is the cmdlet code so you don't have to go back to last week's post to find it.
-<pre class="lang:ps decode:true " title="Start-SQLAgentJob.ps1" >
+
+```powershell
 function Start-SQLAgentJob
 {
     <#
@@ -89,11 +90,13 @@ function Start-SQLAgentJob
         throw ("Job '$JobName' LastRunOutcome = '$JobResult'")
     }
 }
-</pre> 
+```
+
 <hr>
 <h5>Test-Wrapper.ps1</h5>
 The Test-Wrapper.ps1 script is what calls the cmdlet and is responsible for the actual error handling. It traps any errors thrown by the Start-SQLAgentJob cmdlet and takes appropriate action. In this case it prints the error out to the screen and exits with a return code of 1. There is a lot more you can do with a try/catch block, but for the purpose of this post I decided to keep it simple. Here is the actual Test-Wrapper.ps1 script.
-<pre class="lang:ps decode:true " title="Test-Wrapper.ps1" >
+
+```powershell
 Set-StrictMode -Version 2.0
 $error.Clear()
 $ErrorActionPreference = "Stop"
@@ -116,7 +119,8 @@ try {
     # Exit with error code of 1 on any failure
     $host.SetShouldExit(1) 
 }
-</pre> 
+```
+
 This version is quite a bit different than the simple Test-Wrapper script I have used in the previous 2 posts. I'll try to highlight the main differences here.
 <ol>
 <li>$error.Clear clears the error buffer. I like to do this at the beginning of all of my scripts to clear the error buffer. This ensures that I don't go chasing old errors in case of a script failure.</li>

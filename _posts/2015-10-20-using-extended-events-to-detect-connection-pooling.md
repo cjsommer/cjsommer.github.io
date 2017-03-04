@@ -37,7 +37,8 @@ I setup SQLQueryStress to connect to my local database server and run a simple 
 I am fairly new to using Extended Events so the first thing I did was fire up the wizard and see what I had to work with out of the box. Most of what I came up with was right in front of me as default templates and configurations in the wizard. Rather than post screenshots of me running through the wizard, I am just going to share the T-SQL script that I used to create the XE session. Once it has been created you can check it out in the SSMS GUI if you so desire. The main thing to understand about this session is that I am capturing the LOGIN event as it contains all of the information I need to detect connection pooling.
 
 Note: If you want to use the script to create an XE session, make sure you change the output file path to a valid path on your server.
-<pre class="theme:ssms2012 lang:tsql decode:true " title="XE Session Definition">
+
+```sql
 CREATE EVENT SESSION [ConnectionPooling] ON SERVER ADD EVENT sqlserver.connectivity_ring_buffer_recorded (
  ACTION(sqlserver.client_app_name, sqlserver.client_connection_id, sqlserver.client_hostname, sqlserver.context_info, 
   sqlserver.database_name, sqlserver.server_principal_name, sqlserver.session_id, sqlserver.sql_text)
@@ -56,7 +57,7 @@ CREATE EVENT SESSION [ConnectionPooling] ON SERVER ADD EVENT sqlserver.connectiv
    ,TRACK_CAUSALITY = ON
    ,STARTUP_STATE = OFF
    ) ;
-</pre>
+```
 
 My test is setup. My XE session is ready to go. At this point I am ready to begin my test. 
 

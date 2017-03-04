@@ -26,7 +26,7 @@ Snapshots are super easy to manage and they have very little performance impact 
 <h3>Creating a Snapshot</h3>
 Below is an example script for creating a database snapshot for the AdventureWorks2012 database. You will see that a snapshot file is defined for each data file in the database. If there were multiple data files there would be multiple snapshot files. It's pretty straight forward.
 
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Create Snapshot" >
+```sql
 CREATE DATABASE AdventureWorks2012_SnapShot
     ON
     (
@@ -34,23 +34,25 @@ CREATE DATABASE AdventureWorks2012_SnapShot
         FILENAME ='C:\SQL\MSSQL11.INST1\MSSQL\DATA\AdventureWorks2012_Data.ss'
     ) 
     AS SNAPSHOT OF AdventureWorks2012 ;
-</pre> 
+```
 
 You will now find your snapshot under Database Snapshots in SSMS
 <a href="/img/2015/09/DatabaseSnapshots.png"><img src="/img/2015/09/DatabaseSnapshots.png" alt="DatabaseSnapshots" width="302" height="59" class="alignnone size-full wp-image-933" /></a>
 
 <h3>Restoring from a Snapshot</h3>
 Restoring from a database snapshot is also a simple operation. SQL Server handles all of the dirty work and figures out what pages need to be written back to the data files from the snapshot files all behind the scenes. The syntax couldn't be much simpler really.
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Restore from Snapshot" >
+
+```sql
 RESTORE DATABASE AdventureWorks2012 
     FROM DATABASE_SNAPSHOT = 'AdventureWorks2012_SnapShot' ;
-</pre>
+```
 
 <h3>Dropping a snapshot</h3>
 And dropping a database snapshot is just like dropping a database. Once again, very simple syntax here. 
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Drop Snapshot" >
+
+```sql
 DROP DATABASE [AdventureWorks2012_SnapShot] ;
-</pre> 
+```
 
 <h3>What else can I use a snapshot for?</h3>
 Taken directly from the MSDN link posted above, here are some other use cases for snapshots.

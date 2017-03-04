@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday #73 – Naughty or Nice?
+title: T-SQL Tuesday 73 – Naughty or Nice?
 date: 2015-12-08 21:43
 author: cjsommer@gmail.com
 comments: true

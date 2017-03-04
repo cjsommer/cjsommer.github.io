@@ -16,7 +16,8 @@ So lets start saying no to defaults! One setting I always change when I install 
 <hr>
 <h3>Load SQLPS and Create a Server Object</h3>
 This first code block will load SQLPS module, connect to the SQL Server instance of your choosing, and test the connection before moving on. The SQLPS module gives us access to the SQL Management Object libraries (a.k.a SMO), which is our interface into SQL Server. Any configuration property that you can change using SQL Management Studio (SSMS), you can also change using SMO.
-<pre class="lang:ps decode:true " title="Load SQLPS and Create a Server Object" >
+
+```powershell
 # Load SQLPS
 Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location
 
@@ -26,25 +27,27 @@ $SrvObject = New-Object 'Microsoft.SqlServer.Management.Smo.Server' $SQLServerNa
 
 # Test the connection
 $SrvObject.ConnectionContext.Connect()
-</pre>
+```
 
 <hr>
 <h3>Find the Memory Configuration Object Names</h3>
 Next we need to find the correct configuration properties to work within SMO. I am not going to go into all of the properties and members of the SMO server object as there are a lot of them. I know from experience that MinServerMemory and MaxServerMemory are ConfigProperty objects under Configuration property. Wow that sounds really confusing. Hopefully the following code snippet will shed some light on it.
-<pre class="lang:ps decode:true " title="Find the Memory Configuration Object Names" >
+
+```powershell
 # Find the correct configuration property for memory
 $SrvObject.Configuration | Get-Member *memory*
-</pre> 
+```
 <img src="/img/2015/07/tsql2sday68_getmemprop.jpg" alt="tsql2sday68_getmemprop" width="773" height="206" class="alignnone size-full wp-image-787" />
 
 <hr>
 <h3>Display the current MinServerMemory and MaxServerMemory Values</h3>
 MinServerMemory and MaxServerMemory are the properties we are looking for. If you run the following snippet you will be able to see the existing values for the MinServerMemory and MaxServerMemory for your SQL Server.
-<pre class="lang:ps decode:true " title="Display the current MinServerMemory and MaxServerMemory Values" >
+
+```powershell
 # Display the Min and MaxServerMemory configuration properties
 $SrvObject.Configuration.MinServerMemory 
 $SrvObject.Configuration.MaxServerMemory 
-</pre> 
+```
 
 <img src="/img/2015/07/tsql2sday68_maxservermemory.png" alt="tsql2sday68_maxservermemory" width="393" height="138" class="alignnone size-full wp-image-790" />
 
@@ -65,17 +68,18 @@ Only MaxServerMemory is shown in the output, but the MinServerMemory properties 
 <h3>Set MinServerMemory and MaxServerMemory</h3>
 Setting the configuration is fairly straight forward. As seen in the next code snippet, all you need to do is set the config value and then run the alter method on the configuration property. That's it. These 2 commands don't output anything so to check the result you will have to run the display snippet to verify that the values have been changed.
  
-<pre class="lang:ps decode:true " title="Set MinServerMemory and MaxServerMemory"  >
+```powershell
 # Set the MaxServerMemory
 $SrvObject.Configuration.MaxServerMemory.ConfigValue = 128
 $SrvObject.Configuration.MaxServerMemory.ConfigValue = 512
-$SrvObject.Configuration.Alter()</pre> 
+$SrvObject.Configuration.Alter()
+```
 
 <hr>
 <h3>Dynamically Set Min and Max Server Memory - Full Script</h3>
 OK, that's cool and all, but lets put some dynamic logic in the script. Lets say I want to set my MaxServerMemory at 90% of the total physical memory in the server, and I want to set the MinServerMemory at 50% of the MaxServerMemory. Because we're using PowerShell, we can use WMI to get the physical server memory and then perform some simple calculations to set the SQL Server memory settings more dynamically. Below is the full script that you can use just for this purpose.
  
-<pre class="lang:ps decode:true " title="Dynamically Set Min and Max Server Memory - Full Script" >
+```powershell
 # Programmatically Alter the MinServerMemory and MaxServerMemory
 
 # Load SQLPS
@@ -103,7 +107,7 @@ $SrvObject.Configuration.Alter()
 # Display the new values
 $SrvObject.Configuration.MaxServerMemory
 $SrvObject.Configuration.MinServerMemory
-</pre> 
+```
 
 The full script displays the MinServerMemory and MaxServerMemory configuration values after the modification so you can see that your script worked as expected.
 

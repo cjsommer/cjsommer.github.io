@@ -12,14 +12,15 @@ I think the title is fairly descriptive so let me put a little context around it
 
 I was writing a new cmdlet for <a href="https://dbatools.io/" target="_blank">dbatools.io</a> (Remove-DbaBackup to be released in October) and needed to decide how I wanted users to provide the retention for their SQL backups. I've seen a very wide range of backup retention requirements in my career (hours, days, weeks, months, years). I could have coded to the least common denominator of hours and greatly simplified my work, but I wanted to find a more flexible and elegant solution. The last thing I wanted was for people to have to fire up calc.exe, or worse yet having to take off their shoes to figure out how many hours were in a month. This is the function I came up with to create a more user friendly experience with my cmdlet.
  
-<pre class="lang:ps decode:true " title="Convert-UserFriendlyRetentionToDatetime" >function Convert-UserFriendlyRetentionToDatetime
+```powershell
+function Convert-UserFriendlyRetentionToDatetime
 {
     [cmdletbinding()]
     param (
         [string]$UserFriendlyRetention
     )
 
-    &lt;# 
+    <# 
     Convert a user friendly retention value into a datetime.
     The last character of the string will indicate units (validated) 
     Valid units are: (h = hours, d = days, w = weeks, m = months)
@@ -31,7 +32,7 @@ I was writing a new cmdlet for <a href="https://dbatools.io/" target="_blank">db
         '7d' = 7 days
         '4w' = 4 weeks
         '1m' = 1 month
-    #&gt;
+    #>
 
     [int]$Length = ($UserFriendlyRetention).Length
     $Value = ($UserFriendlyRetention).Substring(0,$Length-1)
@@ -56,7 +57,8 @@ I was writing a new cmdlet for <a href="https://dbatools.io/" target="_blank">db
     }
     Write-Verbose "Retention set to '$Value' $UnitString. Retention date/time '$ReturnDatetime'"
     $ReturnDatetime
-}</pre> 
+}
+```
 
 This function accepts the -UserFriendlyRetention parameter and returns the datetime value calculated from that retention. 
 

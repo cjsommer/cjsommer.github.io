@@ -11,7 +11,9 @@ The question was this:
 <a href="/img/2015/03/New-TimeSpan.jpg"><img class="alignnone size-full wp-image-24" src="/img/2015/03/New-TimeSpan.jpg" alt="New-TimeSpan" width="265" height="133" /></a>
 
 This is just a quick/fast snippet in response to that question, but I can think of a ton of enhancements that could made. Hopefully it will be useful as a starting point for someone to customize for their own use.
-<pre class="theme:powershell-ise toolbar:1 scroll:true lang:ps decode:true nums:false ">function Convert-FriendlyTime
+
+```powershell
+function Convert-FriendlyTime
 {
     param (
         [string]$FriendlyTime 
@@ -36,5 +38,6 @@ This is just a quick/fast snippet in response to that question, but I can think 
 
 Convert-FriendlyTime -FriendlyTime "2 days"
 Convert-FriendlyTime -FriendlyTime "68 hours"
-Convert-FriendlyTime -FriendlyTime "68 InvalidUnits"</pre>
+Convert-FriendlyTime -FriendlyTime "68 InvalidUnits"
+```
 <h3>PowerShell is fun!</h3>

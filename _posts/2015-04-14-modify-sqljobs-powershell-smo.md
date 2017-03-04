@@ -32,26 +32,30 @@ The core object class in this demo is the microsoft.sqlserver.management.smo.age
 
 Note: You can also visit <a title="MSDN JobStep Class" href="https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.management.smo.agent.jobstep.aspx" target="_blank">MSDN JobStep Class</a> to get help online. I sometimes find the MSDN class pages a bit easier to navigate for the more complex objects.
 
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Load SQLPS and create a JobStep object">
+```powershell
 
 Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location;
 $JobStep = New-Object microsoft.sqlserver.management.smo.agent.jobstep
 
-</pre>
+```
 
 <hr />
 
 The properties contain all of the possible configuration items that we can manipulate in each JobStep object. In this example I will be manipulating the OutputFileName as well as the JobStepFlags property, where I will be adding the configuration value "AppendToLogFile".
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Get the JobStep object properties"># Display all of the properties that come with the JobStep object
+
+```powershell
+# Display all of the properties that come with the JobStep object
 $JobStep | Get-Member -MemberType Property
-</pre>
+```
 <a href="/img/2015/04/JobStepProperties.jpg"><img class="alignnone size-full wp-image-160" src="/img/2015/04/JobStepProperties.jpg" alt="JobStepProperties" width="965" height="519" /></a>
 
 <hr />
 
 The one method I am using in the script below is the Alter() method. After you set the properties to the values you want, you have to run the Alter() method to apply the changes. Without the Alter() they will go back to what they were previously. Also listed below are all of the other methods that come with the JobStep object.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Get the JobStep object methods">$JobStep | Get-Member -MemberType Method
-</pre>
+
+```powershell
+$JobStep | Get-Member -MemberType Method
+```
 <a href="/img/2015/04/JobStepMethods.jpg"><img class="alignnone size-full wp-image-159" src="/img/2015/04/JobStepMethods.jpg" alt="JobStepMethods" width="964" height="458" /></a>
 
 <hr />
@@ -60,7 +64,8 @@ Below is a complete working script. To use it you need to set the $SQLServer and
 
 Another thing to note is that the job step output filenames are setup to use tokens. Based on this script, the OutputFileNames will get set to "JobName_Step1_yyyyMMdd.txt". The JobName comes from SMO, but the  step number and date are dynamic because they use tokens. Check out the MSDN article for <a href="https://msdn.microsoft.com/en-us/library/ms175575.aspx" title="Using Tokens in Job Steps" target="_blank">Using Tokens in Job Steps</a> for more details. You can most certainly customize the filenames to whatever standard you desire. Enough chatter, here's the script!
 
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Full Script">Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location;
+```powershell
+Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location;
 
 # Set SQLServer a SQLAgentOutputLocation to fit your needs
 # If it is the default instance us SERVERNAME\DEFAULT as the SQLServer
@@ -93,7 +98,7 @@ foreach ($Step in $JobSteps) {
     $Step.JobStepFlags
     " "
 }
-</pre>
+```
 
 Looking back at the 2 hours I lost last week I can safely say that there is no reason to manually modify 25 jobs just to change the output file location. Honestly the time it took me to come up with this script was less than the time it took me to manually modify those jobs, and PowerShell did it correctly the first time. The best part of writing snippets like this is that I never have to do it again. I now have something I can use in the future.
 

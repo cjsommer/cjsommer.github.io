@@ -25,30 +25,38 @@ If you're strapped on cash, I am here to show you that you don't need expensive
 If you're not familiar with SMO, they are the SQL Management Objects. They let you manage SQL Server. Instance configuration, database settings and a whole bunch of other really cool stuff including SQL Agent Jobs.
 
 The easiest way to get access to the SMO objects is just to load SQLPS module. There are other ways to load individual assemblies, but for the purpose of this post, lets just load the SQLPS module.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Load the SQLPS Module">Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location ;
-</pre>
+
+```powershell
+Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location ;
+```
 
 <hr />
 
 Next, we are going to set some variables for use in the script. The SQLServer is the name of the SQL Server we are going to interrogate. The BeginDate and EndDate are the date ranges for the job history and are used to limit the result set. This helps greatly with performance of the script if you keep a lot of SQL Job History.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Set your variables"># Set our Variables
+
+```powershell
+# Set our Variables
 [string]$SQLServer = "localhost\inst1"
 [datetime]$BeginDate = "2015-04-01 00:00:00"
 [datetime]$EndDate = Get-Date
-</pre>
+```
 
 <hr />
 
 Next is to create the SMO Server Object. This is our connection to SQL Server using SMO. The ConnectionContext.Connect() statement tests the connection and is our validation that we have connected to an active SQL Server.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Create an SMO server object"># Create an SMO Server object and initialize some variables for use in the loop
+
+```powershell
+# Create an SMO Server object and initialize some variables for use in the loop
 $oServer = New-Object "Microsoft.SqlServer.Management.Smo.Server" $SQLServer ;
 $oServer.ConnectionContext.Connect() ;
-</pre>
+```
 
 <hr />
 
 This next block of code does all of the work for us. It gets the history of each job on the server that falls in between the BeginDate and the EndDate. All of the history that meets that criteria is then added to the variable $JobHistory. That variable will contain all of the JobHistory objects once this portion of the script is done.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Get the job history"># Get the job history for each job
+
+```powershell
+# Get the job history for each job
 $job = $null ;
 $JobHistory = $null ;
 foreach($job in $oServer.JobServer.Jobs | 
@@ -63,12 +71,14 @@ foreach($job in $oServer.JobServer.Jobs |
                     -and ($_.RunDate -le $EndDate) } ;
     $JobHistory += $tmpJobHistory ;
 }
-</pre>
+```
 
 <hr />
 
 This last little block of code outputs the results to us. The SQL Agent RunStatus is a simple integer value. The snippet below changes that integer to a more readable format using a hash table. The JobHistory variable is an array of JobHistory objects and contains all of the properties that come with it. The final output statement selects only a few of the columns from the JobHistory variable and displays it using the Format-Table cmdlet. This is a very typical way of displaying your output.
-<pre class="theme:powershell-ise toolbar:1 nums:false scroll:true tab-convert:true lang:ps decode:true" title="Display our Job History"># Fancy way to remap the RunStatus, which is an integer, to human readable text
+
+```powershell
+# Fancy way to remap the RunStatus, which is an integer, to human readable text
 $RunStatus = @{'0'="Failed";'1'="Succeeded";'2'="Retry";'3'="Cancelled"}
 $RunStatusColumn = @{
     Name = 'RunStatus'
@@ -78,7 +88,7 @@ $RunStatusColumn = @{
 # Now Output the Results. Notice the reference to the hash table for RunStatus
 $JobHistory | Select-Object JobName,RunDate,$RunStatusColumn | 
     Sort-Object JobName,RunDate | Format-Table -AutoSize ;
-</pre>
+```
 
 <hr />
 

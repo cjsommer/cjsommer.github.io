@@ -26,7 +26,9 @@ The test platform is my old laptop so nothing fancy. It shouldn't be hard to pus
 	<li>PowerShell 4</li>
 </ul>
 I used <a href="http://www.databasetestdata.com/" target="_blank">www.databasetestdata.com</a> to generate a simple table and 1000 rows of test data to seed my test. It's a pretty simple table. No indexes or constraints or anything like that.
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Addresses Table">/****** Object:  Table [dbo].[addresses]    Script Date: 4/24/2015 10:07:15 PM ******/
+
+```sql
+/****** Object:  Table [dbo].[addresses]    Script Date: 4/24/2015 10:07:15 PM ******/
 CREATE TABLE [dbo].[addresses](
 	[Email] [varchar](50) NULL,
 	[Full Name] [varchar](50) NULL,
@@ -34,9 +36,12 @@ CREATE TABLE [dbo].[addresses](
 	[User Id] [varchar](50) NULL,
 	[Created At] [varchar](50) NULL
 ) ON [PRIMARY] ;
-</pre>
+```
+
 The export is performed by piping the output of Invoke-SqlCmd to the Export-CSV cmdlet. Here is the script.
-<pre class="lang:ps decode:true " title="Export-CSV-Testing.ps1">Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location
+
+```powershell
+Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location
 
 $SQLServer = "localhost\inst1"
 $DBName = "ExportCSVTesting"
@@ -76,18 +81,22 @@ while ( $true )
     Invoke-Sqlcmd -ServerInstance $SQLServer -Database $DBName -Query $StatsSQL
 }
 
-</pre>
+```
+
 So basically I fire up this test for each different row count and let it collect a bunch of run time statistics. I collected a minimum of 10 samples for each different row count. Storing the results of each export in the database worked out really well because it made it easy to calculate the results I was looking for.
 <h2>Run Statistics</h2>
 Here is the query I used to calculate the run statistics
-<pre class="theme:ssms2012 lang:tsql decode:true" title="Run Statistics">SELECT Counter,
+
+```sql
+SELECT Counter,
 	COUNT(0) AS Samples
 	,MIN(Milliseconds) AS ms_Min
 	,AVG(Milliseconds) AS ms_Avg
 	,MAX(Milliseconds) AS ms_Max
 	,CAST(Counter / AVG(Milliseconds) AS decimal) AS rows_per_ms
   FROM [ExportCSVTesting].[dbo].[RunStats]
-  GROUP BY Counter</pre>
+  GROUP BY Counter
+```
 
 <a href="/img/2015/04/ExportCSVStats.jpg"><img src="/img/2015/04/ExportCSVStats.jpg" alt="ExportCSVStats" width="451" height="228" class="alignright size-full wp-image-378" /></a>
 

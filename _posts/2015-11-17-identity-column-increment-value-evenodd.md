@@ -19,7 +19,9 @@ So what I wanted to determine if there was a way to ensure that only ODD values 
 <hr>
 <h3>The IncrementTest Table Creation Script</h3>
 So I created a table in mysandbox database just for this test.
-<pre class="theme:ssms2012 nums:true lang:tsql decode:true " title="Create IncrementTest table in MySandbox Database">USE [mysandbox] ;
+
+```sql
+USE [mysandbox] ;
 /****** Object:  Table [dbo].[IncrementTest]    Script Date: 2015-11-11 19:12:29 ******/
 SET ANSI_NULLS ON
 GO
@@ -35,12 +37,12 @@ CREATE TABLE [dbo].[IncrementTest](
 
 SET ANSI_PADDING OFF
 GO
-</pre>
+```
 
 <h3>T-SQL Script to Test the Inserts</h3>
 Next I added a handful of records to the table just to see what the behavior of the identity column would be.
 
-<pre class="theme:ssms2012 nums:true lang:tsql decode:true " title="Test T-SQL Script">
+```sql
 /****** Script for SelectTopNRows command from SSMS  ******/
 TRUNCATE TABLE [mysandbox].[dbo].[IncrementTest];
 
@@ -57,7 +59,7 @@ END
 
 SELECT *
 FROM [mysandbox].[dbo].[IncrementTest];
-</pre>
+```
 
 <h3>First Set of Results</h3>
 And here are the results of the first batch of inserts. Sure enough you can see that the values in the table remain ODD and increment by 2, just like the developer wanted.
@@ -71,7 +73,7 @@ Enter, IDENTITY_INSERT! With IDENTITY_INSERT OFF (the default), the identity col
 
 The following script determines the MAX value in the table (19), it adds 1 to that number (20), and then it inserts a few more records after that just to prove my point. Hey wait, 20 is an even number! Will that even work? Not sure. I'm trying to punch holes in the EVEN/ODD design that my developer wants to use, remember.
 
-<pre class="theme:ssms2012 nums:true lang:tsql decode:true " title="Test T-SQL Script with IDENTITY_INSERT ON">
+```sql
 -- MAX ID Should be 19 at this point
 DECLARE @maxid INT = (
     SELECT MAX(ID)
@@ -102,7 +104,8 @@ BEGIN
 END
 
 SELECT *
-FROM [mysandbox].[dbo].[IncrementTest];</pre>
+FROM [mysandbox].[dbo].[IncrementTest];
+```
 
 <h3>The Final Results</h3>
 As you can see from the results below I was able to punch a hole into the EVEN/ODD design just by using IDENTITY_INSERT.

@@ -17,7 +17,9 @@ So if a company is looking to switch to an enterprise job scheduling solution th
 
 <h2>Test SQL Agent Job</h2>
 The first thing I needed was a job to test with, so I created the following job on my local SQL instance. All it does is selects @@SERVERNAME, sleeps for 10 seconds and then exits, so it's pretty simple. Here is the TSQL to create that job.
-<pre class="theme:ssms2012 lang:tsql decode:true" title="TestJob.sql">USE [msdb]
+
+```sql
+USE [msdb]
 GO
 
 /****** Object:  Job [TestJob]    Script Date: 5/10/2015 9:06:29 PM ******/
@@ -70,11 +72,12 @@ QuitWithRollback:
     IF (@@TRANCOUNT > 0) ROLLBACK TRANSACTION
 EndSave:
 GO
-</pre>
+```
 
 <h2>The SQL Agent Job Wrapper Cmdlet</h2>
 The next piece I needed to create was a PowerShell cmdlet to do the work for me. The cmdlet is the meat of the this whole process. It will start a SQL Server Agent job and wait for completion before returning to the calling script. The cmldlet requires the SQL Server and the Job Name that you want to execute as parameters. It will only attempt to run the job if it is enabled and currently idle. If for some reason the job is already running it will still wait for completion, but it wont try to start it again. When the job completes the cmdlet will return the Name, CurrentRunStatus, LastRunOutcome, LastRunDate and the LastRunDurationSeconds (which could be modified to fit your needs).
-<pre class="lang:ps decode:true " title="Start-SQLAgentJob.ps1">
+
+```powershell
 function Start-SQLAgentJob
 {
     <#
@@ -133,12 +136,12 @@ function Start-SQLAgentJob
 
     $JobObj | select Name,CurrentRunStatus,LastRunOutcome,LastRunDate,@{Name="LastRunDurationSeconds";Expression={$RunDuration}}
 }
-</pre>
+```
 
 <h2>Example of Running the Cmdlet</h2>
 And finally I needed to create a script to test the cmdlet. The test script loads the cmdlet by dot sourcing the Start-SQLAgentJob.ps1 file and then calls the cmdlet by passing it the SQL Server and the JobName as in the example below. It's pretty simple.
 
-<pre class="lang:ps decode:true " title="Test-Wrapper.ps1">
+```powershell
 # Setup pathing and environment based on the script location
 $Invocation = (Get-Variable MyInvocation -Scope 0).Value
 $ScriptLocation = Split-Path $Invocation.MyCommand.Path
@@ -150,7 +153,7 @@ $ScriptLocation = Split-Path $Invocation.MyCommand.Path
 $SQLServer = "localhost\inst1"
 $JobName = "TestJob"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
-</pre>
+```
 
 And here are my results:<a href="/img/2015/05/SqlAgentWrapperOut.jpg"><img src="/img/2015/05/SqlAgentWrapperOut.jpg" alt="SqlAgentWrapperOut" width="516" height="178" class="alignnone size-full wp-image-519" /></a>
 

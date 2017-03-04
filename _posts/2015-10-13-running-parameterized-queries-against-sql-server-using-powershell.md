@@ -25,7 +25,7 @@ Ultimately I wanted to find a method that protects me from SQL injection and pro
 <h3>Select-Unparameterized using SQLPS and Invoke-Sqlcmd</h3>
 This script illustrates the way I first learned to run queries against SQL Server. I am using variable substitution to generate dynamic SQL, and then running it using Invoke-Sqlcmd. I also output the dynamic SQL to the screen so we can see what it is going to do.  
 
-<pre class="lang:ps decode:true " title="Select-UnparameterizedSQLPS">
+```powershell
 function Select-UnparameterizedSQLPS
 {
     [cmdletbinding()]
@@ -57,7 +57,8 @@ function Select-UnparameterizedSQLPS
 Clear-Host
 $result = Select-UnparameterizedSQLPS -LastName "Duffy' ; DROP TABLE [DeleteMe] ;--"
 $result | Format-Table -AutoSize
-</pre>
+```
+
 The SQL Query:
 <a href="/img/2015/10/Select-UnparameterizedSQLPS.jpg"><img src="/img/2015/10/Select-UnparameterizedSQLPS.jpg" alt="Select-UnparameterizedSQLPS" width="465" height="224" class="alignnone size-full wp-image-1001" /></a>
 
@@ -67,7 +68,8 @@ It is clear from the SQL output what this was going to do, and sure enough, the 
 <br  clear="all"/><hr>
 <h3>Select-Parameterized using SQLPS and Invoke-Sqlcmd</h3>
 The second method I tried was by using Invoke-Sqlcmd and using sp_executesql to run my query as a parameterized query. The parameterization did help with plan reuse, but it did not prevent against SQL Injection attack like I thought it would.
-<pre class="lang:ps decode:true " title="Select-ParameterizedSQLPS" >
+
+```powershell
 function Select-ParameterizedSQLPS
 {
     [cmdletbinding()]
@@ -100,7 +102,8 @@ function Select-ParameterizedSQLPS
 Clear-Host
 $result = Select-ParameterizedSQLPS -LastName "'Duffy' ; DROP TABLE [DeleteMe] ;--"
 $result | Format-Table -AutoSize
-</pre> 
+```
+
 The SQL Query:
 <a href="/img/2015/10/Select-ParameterizedSQLPS.jpg"><img src="/img/2015/10/Select-ParameterizedSQLPS.jpg" alt="Select-ParameterizedSQLPS" width="405" height="210" class="alignnone size-full wp-image-1000" /></a>
 
@@ -112,7 +115,7 @@ It was not clear from the raw T-SQL output what this query was going to do becau
 <h3>Select-Parameterized using ADOLib and Invoke-Query</h3>
 So for my third attempt I thought I would take a different approach and use straight .NET, which is when I also found the SQLPSX module. SQLPSX is actually a bundle of other modules and it includes the adoLib module. adoLib is a really nice because uses straight .NET under the hood. It's fast, it's efficient, and in this case it's just what the doctor ordered.
 
-<pre class="lang:ps decode:true " title="Select-ParameterizedADOLib">
+```powershell
 function Select-ParameterizedADOLib
 {
     [cmdletbinding()]
@@ -144,7 +147,8 @@ function Select-ParameterizedADOLib
 Clear-Host
 $result = Select-ParameterizedADOLib -LastName "Duffy' ; DROP TABLE [DeleteMe] ;--"
 $result | Format-Table -AutoSize
-</pre>
+```
+
 The SQL Query:
 <a href="/img/2015/10/Select-ParameterizedADOLib.jpg"><img src="/img/2015/10/Select-ParameterizedADOLib.jpg" alt="Select-ParameterizedADOLib" width="389" height="238" class="alignnone size-full wp-image-999" /></a>
 

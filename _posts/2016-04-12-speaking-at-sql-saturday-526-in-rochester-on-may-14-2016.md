@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Speaking at SQL Saturday #526 in Rochester on May 14, 2016
+title: Speaking at SQL Saturday 526 in Rochester on May 14, 2016
 date: 2016-04-12 11:00
 author: cjsommer@gmail.com
 comments: true

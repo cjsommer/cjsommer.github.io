@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Speaking at SQL Saturday #513 in Albany, NY on July 30th - PowerShell and SQL Server
+title: Speaking at SQL Saturday 513 in Albany, NY on July 30th - PowerShell and SQL Server
 date: 2016-07-18 14:39
 author: cjsommer@gmail.com
 comments: true

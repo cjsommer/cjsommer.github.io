@@ -24,7 +24,7 @@ Here is the connection that has control of my AdventureWorks2012 database.
 
 Here is the TSQL used to find the session that you need to kill.
 
-<pre class="theme:ssms2012 lang:tsql decode:true " title="Find spid's connected to your database" >
+```sql
 USE [master] ;
  
 DECLARE @DatabaseName VARCHAR(255) ;
@@ -38,7 +38,7 @@ SELECT spr.spid AS [spid]
 FROM sys.sysprocesses spr
 INNER JOIN sys.databases sdb ON sdb.database_id = spr.dbid
 WHERE sdb.NAME = @DatabaseName ;
-</pre> 
+```
 
 And here are the results from the TSQL.
 

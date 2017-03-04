@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Speaking at SQL Saturday #487 in Ottawa on April 16, 2016
+title: Speaking at SQL Saturday 487 in Ottawa on April 16, 2016
 date: 2016-04-03 13:42
 author: cjsommer@gmail.com
 comments: true

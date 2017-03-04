@@ -19,7 +19,7 @@ Condition #3 - The job failed to run successfully.
 
 If any of these conditions is met I will expect the cmdlet to throw an error. The original version of the cmdlet would only throw an error if it tried to connect to an invalid SQL Server. An invalid Job Name or job failure would not throw an error, so I had to add that functionality. Here is the new version of the cmdlet with the additional checks to validate the Job Name and the Last Run Status after the job completes. If any of those error conditions are met, the cmdlet will explicitly throw an error.
  
-<pre class="lang:ps decode:true " title="Start-SQLAgentJob.ps1" >
+```powershell
 function Start-SQLAgentJob
 {
     <#
@@ -91,12 +91,13 @@ function Start-SQLAgentJob
         throw ("Job '$JobName' LastRunOutcome = '$JobResult'")
     }
 }
-</pre> 
+```
 
 <hr>
 <h5>Successful Job Run</h5>
 This is what a successful run of the cmdlet looks like. No errors are encountered and the Job object is returned to the calling script. The test script is pretty much the same test script that I used last week, with the addition of the ErrorActionPreference. ErrorActionPreference set to "stop" will ensure that the cmdlet halts on any error. I will explain that variable a bit more in Part 3 of this series.
-<pre class="lang:ps decode:true " title="Successful SQL Agent Job Run" >
+
+```powershell
 # Setup pathing and environment based on the script location
 $Invocation = (Get-Variable MyInvocation -Scope 0).Value
 $ScriptLocation = Split-Path $Invocation.MyCommand.Path
@@ -110,13 +111,15 @@ $JobName = "TestJob"
 
 $ErrorActionPreference = "Stop"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
-</pre>
+```
+
 <a href="/img/2015/05/SQLAgent_SuccessfulJob.jpg"><img src="/img/2015/05/SQLAgent_SuccessfulJob.jpg" alt="SQLAgent_SuccessfulJob" width="649" height="193" class="alignnone size-full wp-image-584" /></a>
 
 Below this point are the tests to validate each of the error conditions that I outlined above. 
 
 <h5>Condition #1 - Invalid or unavailable SQL Server</h5>
-<pre class="lang:ps decode:true " title="Bad SQLServer parameter" >
+
+```powershell
 # Setup pathing and environment based on the script location
 $Invocation = (Get-Variable MyInvocation -Scope 0).Value
 $ScriptLocation = Split-Path $Invocation.MyCommand.Path
@@ -130,11 +133,12 @@ $JobName = "TestJob"
 
 $ErrorActionPreference = "Stop"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
-</pre>
+```
 <a href="/img/2015/05/SQLAgent_BadSQLServer.png"><img src="/img/2015/05/SQLAgent_BadSQLServer.png" alt="SQLAgent_BadSQLServer" width="933" height="149" class="alignnone size-full wp-image-595" /></a>
 
 <h5>Condition #2 - Invalid Job Name</h5>
-<pre class="lang:ps decode:true " title="Bad JobName parameter" >
+
+```powershell
 # Setup pathing and environment based on the script location
 $Invocation = (Get-Variable MyInvocation -Scope 0).Value
 $ScriptLocation = Split-Path $Invocation.MyCommand.Path
@@ -148,14 +152,14 @@ $JobName = "BadJobName"
 
 $ErrorActionPreference = "Stop"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
-</pre> 
+```
 <a href="/img/2015/05/SQLAgent_BadJobName.png"><img src="/img/2015/05/SQLAgent_BadJobName.png" alt="SQLAgent_BadJobName" width="846" height="150" class="alignnone size-full wp-image-594" /></a>
 
 <h5>Condition #3 - The job failed to run successfully</h5>
 For this test case I explicitly set my SQL Agent Job to fail all the time in the job step.
 <a href="/img/2015/05/SQLAgent_JobAlwaysFails.jpg"><img src="/img/2015/05/SQLAgent_JobAlwaysFails.jpg" alt="SQLAgent_JobAlwaysFails" width="506" height="156" class="alignnone size-full wp-image-587" /></a>
 
-<pre class="lang:ps decode:true " title="Always Failing Job" >
+```powershell
 # Setup pathing and environment based on the script location
 $Invocation = (Get-Variable MyInvocation -Scope 0).Value
 $ScriptLocation = Split-Path $Invocation.MyCommand.Path
@@ -169,7 +173,7 @@ $JobName = "TestJob"
 
 $ErrorActionPreference = "Stop"
 Start-SQLAgentJob -SQLServer $SQLServer -JobName $JobName
-</pre>
+```
 <a href="/img/2015/05/SQLAgent_FailedJob.png"><img src="/img/2015/05/SQLAgent_FailedJob.png" alt="SQLAgent_FailedJob" width="915" height="149" class="alignnone size-full wp-image-596" /></a>
 
 That's the end of the testing I need to do at this point. I have demonstrated that the cmdlet throws the appropriate error for each of the error conditions that I want to catch.
