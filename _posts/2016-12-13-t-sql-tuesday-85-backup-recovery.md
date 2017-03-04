@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday #85 - Backup & Recovery
+title: T-SQL Tuesday 85 - Backup & Recovery
 date: 2016-12-13 10:00
 author: cjsommer@gmail.com
 comments: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday #68: Just Say No to Defaults
+title: T-SQL Tuesday 68 - Just Say No to Defaults
 date: 2015-07-14 08:00
 author: cjsommer@gmail.com
 comments: true

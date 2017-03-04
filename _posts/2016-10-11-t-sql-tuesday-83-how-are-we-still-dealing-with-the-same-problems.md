@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday 83: How are we still dealing with the same problems?
+title: T-SQL Tuesday 83 - How are we still dealing with the same problems?
 date: 2016-10-11 16:26
 author: cjsommer@gmail.com
 comments: true

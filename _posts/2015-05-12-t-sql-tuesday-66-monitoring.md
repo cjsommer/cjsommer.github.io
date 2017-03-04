@@ -1,6 +1,6 @@
 ---
 layout: post
-title: T-SQL Tuesday #66 - Monitoring
+title: T-SQL Tuesday 66 - Monitoring
 date: 2015-05-12 08:25
 author: cjsommer@gmail.com
 comments: true
