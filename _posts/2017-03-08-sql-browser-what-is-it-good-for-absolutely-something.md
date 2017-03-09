@@ -10,16 +10,14 @@ Another great teaching opportunity landed in my lap this week. I got an email fr
 
 We have a fairly complex and secure network environment. Multiple networks across multiple data centers with multiple firewalls in between. Because of this, one of the first things I typically look at is connectivity between application and database servers. The following question/answer session is how I attacked this particular problem, which led me to the actual issue.
 
-<em>
-Q: Can you connect to the TCP port that SQL Server is listening on?
+*Q: Can you connect to the TCP port that SQL Server is listening on?*
 A: Yes, in this case we could.
 
-Q: What does the connection string look like?
+*Q: What does the connection string look like?*
 A: The connection string was "Server=earth\ourplanet; Database='master'; Integrated Security=SSPI;"
 
-Q: Can the application server connect to UDP 1434 on the database server?
+*Q: Can the application server connect to UDP 1434 on the database server?*
 A: Uhhh, nope.
-</em>
 
 Bingo. The application server could not connect to the SQL Browser service on UDP 1434. So maybe now you're asking why, and that's kinda the gist of this post. The SQL Browser provides a valuable service when an application tries to connect to a SQL Server named instance. The SQL Browser listens on UDP 1434 and provides information about all SQL Server instances that are installed on the server. One of those pieces of information is the TCP port number that SQL is listening on. Without that info, the application has no idea how to reach to your SQL Server, and will fail to connect. This was our exact issue.
 
