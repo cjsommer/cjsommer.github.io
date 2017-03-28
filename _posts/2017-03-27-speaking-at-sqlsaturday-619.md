@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I will be Painting with PowerShell at SQL Saturday 619, Rochester, NY on Apr 29, 2017!
+title: SQL Saturday 619. Join me April 29, 2017 in Rochester, NY and learn to Paint with PowerShell!
 date: 2017-03-27 20:00
 author: cjsommer@gmail.com
 comments: true
