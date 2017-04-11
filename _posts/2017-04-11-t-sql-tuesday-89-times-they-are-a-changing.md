@@ -7,9 +7,9 @@ comments: true
 categories: [SQL Server]
 ---
 
+<div "align=right">
 ![](/img/TSQLTuesday.jpg "tsql2sday")
-
----
+</div>
 
 T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic [blog](http://sqlblog.com/blogs/adam_machanic/) &#124; [twitter](https://twitter.com/AdamMachanic).
 
