@@ -7,11 +7,11 @@ comments: true
 categories: [SQL Server]
 ---
 
-[http://sqlkover.com/t-sql-tuesday-89-invitation-the-times-they-are-a-changing/](/images/TSQLTuesday.jpg)
+![](/images/TSQLTuesday.jpg "tsql2sday")
 
-T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic ([blog](http://sqlblog.com/blogs/adam_machanic/) | [twitter](https://twitter.com/AdamMachanic)).
+T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic ( [blog](http://sqlblog.com/blogs/adam_machanic/) | [twitter](https://twitter.com/AdamMachanic) ).
 
-This month's tsql2sday is being hosted by Koen Verbeeck ([blog](http://sqlkover.com/t-sql-tuesday-89-invitation-the-times-they-are-a-changing/)|[twitter](https://twitter.com/Ko_Ver)) and the topic is "The times they are a changing". Basically, how are you handling the ever changing landscape of the SQL DBA. It's a brave new world and the days of the point-n-click, drag-n-drop administrator are fleeting. Installing SQL Server. Checking backup. Performing health checks. A Jedi-DBA craves not these things!
+This month's tsql2sday is being hosted by Koen Verbeeck ( [blog](http://sqlkover.com/t-sql-tuesday-89-invitation-the-times-they-are-a-changing/)|[twitter](https://twitter.com/Ko_Ver) ) and the topic is "The times they are a changing". Basically, how are you handling the ever changing landscape of the SQL DBA. It's a brave new world and the days of the point-n-click, drag-n-drop administrator are fleeting. Installing SQL Server. Checking backup. Performing health checks. A Jedi-DBA craves not these things!
 
 So what are some of the new roles we find ourselves in?
 
