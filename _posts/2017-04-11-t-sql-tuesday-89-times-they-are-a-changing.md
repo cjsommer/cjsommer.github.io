@@ -7,7 +7,7 @@ comments: true
 categories: [SQL Server]
 ---
 
-<div "align=right">
+<div style="text-align: right">
 ![](/img/TSQLTuesday.jpg "tsql2sday")
 </div>
 
