@@ -12,7 +12,7 @@ T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft
 
 This month's tsql2sday is being hosted by James Anderson [blog](http://thedatabaseavenger.com/2017/05/t-sql-tuesday-shipping-database-changes/) &#124;[twitter](https://twitter.com/DatabaseAvenger) and this month's theme is "Shipping Database Changes". For this T-SQL Tuesday, I’d like to hear about your thoughts or experiences with database deployments.
 
----
+# When Good Deployments Go Bad
 
 Well, my thoughts for today's T-SQL Tuesday are about covering your a$$ because database deployments don't always go as planned. There's a number of reasons why a code deployment may have to be rolled back, and sometimes that includes the database. It's a road I've been down more than once (sadly). What I've learned over the years is that it's always good to have a solid rollback plan. A way to get the database back to the pre-deployment state. Sure you could always restore from backups, but if you have a large database that can take quite a while. For my first line of defense I prefer to use database snapshots.
 
@@ -24,7 +24,7 @@ Well, kinda but not really. It's like a backup in the sense that it can be used 
 ### So what's so cool about snapshots?
 I like snapshots for rollback protection in deployments for a couple reasons. 
 
-* They are fast! Creating a snapshot of our 100 GB database takes less than a second. A full backup as I said earlier is a 20 minute operation.
+* They are fast! Creating a snapshot of our multi TB database takes a few seconds. Taking a FULL backup for the same database will take much longer.
 * Restoring from a snapshot is typically a very quick operation as well, depending on the delta of the original database after the snapshot was taken. For the purposes of a code release, this delta is typically very small and the restore from the snapshot takes less than a minute.
 * They are simple. The TSQL syntax for managing snapshots is really easy to understand. No finding back files and running RESTORE commands in the heat of battle.
 
@@ -72,4 +72,4 @@ Taken directly from the MSDN link posted above, here are some other use cases fo
 
 
 ### Conclusion
-I was really surprised that as part of this database deployment nobody knew about database snapshots. They had just accepted the fact that a database deployment included a full backup. This was completely unnecessary and we were able to shorten the deployment time by 20 minutes by using database snapshots instead. Hopefully this article enlightens someone and maybe cuts a few minutes out of your deployment.
+Even the best planned database deployments can go bad. I believe database snapshots provide a simple yet effective recovery path when there's no other option than to rollback the database.  
