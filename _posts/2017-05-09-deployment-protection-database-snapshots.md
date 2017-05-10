@@ -65,7 +65,7 @@ DROP DATABASE [AdventureWorks2012_SnapShot] ;
 ### What else can I use a snapshot for?
 Taken directly from the MSDN link posted above, here are some other use cases for snapshots.
 * Snapshots can be used for reporting purposes.
-* >Maintaining historical data for report generation.
+* Maintaining historical data for report generation.
 * Using a mirror database that you are maintaining for availability purposes to offload reporting.
 * Safeguarding data against administrative error.
 * In the event of a user error on a source database, you can revert the source database to the state it was in when a given database snapshot was created. Data loss is confined to updates to the database since the snapshot's creation.
