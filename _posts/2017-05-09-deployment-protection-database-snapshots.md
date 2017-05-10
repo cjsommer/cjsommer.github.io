@@ -23,11 +23,11 @@ Well, kinda but not really. It's like a backup in the sense that it can be used 
 
 <h3>So what's so cool about snapshots?</h3>
 I like snapshots for rollback protection in deployments for a couple reasons. 
-<ol>
+
 <li>They are fast! Creating a snapshot of our 100 GB database takes less than a second. A full backup as I said earlier is a 20 minute operation.</li>
 <li>Restoring from a snapshot is typically a very quick operation as well, depending on the delta of the original database after the snapshot was taken. For the purposes of a code release, this delta is typically very small and the restore from the snapshot takes less than a minute.</li>
 <li>They are simple. The TSQL syntax for managing snapshots is really easy to understand. No finding back files and running RESTORE commands in the heat of battle.
-</ol>
+
 
 Snapshots are super easy to manage and they have very little performance impact on the underlying database. And the best part is you always have your standard database backups to fall back on in case you need to. You have fulls, diffs and tlogs and could always be used as a second form of protection, but there's no reason to take another full backup during a code deployment. Why waste 20 minutes waiting for a backup before you begin your code deployment when you have snapshots available to you?
 
