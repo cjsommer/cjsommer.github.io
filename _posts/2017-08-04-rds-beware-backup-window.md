@@ -10,6 +10,8 @@ categories: [SQL Server]
 
 If you've ever fired up an RDS instance you know you can set an automated backup window for your instance. During this window Amazon will kick off an automated snapshot of your RDS instance each day. Set it and forget it. Kinda nice. Backups are good, right? 
 
+<img src="/img/2017/08/rds_backups.png" alt="RDS Backups" align="left">
+
 Another nice feature if you are using SQL Server on RDS is that it supports native SQL Server backup and restore using S3 buckets. This can be helpful for getting data into and out of RDS, or in my case we use it for migrating databases between RDS instances. The following link describes in detail how to configure this feature for your RDS instances as it's not enabled by default.
 
 <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html">http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html</a>
@@ -40,9 +42,11 @@ use msdb ;
 
 exec msdb.dbo.rds_task_status ;
 ```
+
 <img src="/img/2017/08/rds_task_status.png" alt="rds_task_status" align="left">
 
 As you can see, it's pretty simple to do native backup and restore in RDS, but there is one gottcha I have run into that I didn't see in the documentation. If you start a native SQL backup/restore operation, and you run into the automated RDS backup window, RDS will kill your native SQL backup/restore. The rds_task_status keeps a very detailed output and it's pretty easy to see what happened, but it can be a pain in the neck if you start a backup only to find it killed before completion.
+
 
 ```
  [2017-08-04 23:46:23.690] Task execution has started. 
