@@ -58,8 +58,8 @@ As you can see, it's pretty simple to do native backup and restore in RDS, but t
  [2017-08-05 00:09:37.960] BACKUP DATABASE is terminating abnormally.
 ```
 
-One option to wprk around this issue is to disable the automated backups, but please note that this will delete all of snapshots for that instance. Probably not something you want to do. You never need backups until you do. 
+One option to work around this issue is to disable the automated backups, but please note that this will delete all of snapshots for that instance. Probably not something you want to do. You never need backups until you do. 
 
-The only other way around this issue is to never run native SQL backup/restore commands around your scheduled RDS backup window. 
+The only other way around this issue is to never run native SQL backup/restore commands around your scheduled RDS backup window. Maybe you need to move your automated backup window. Maybe you need to time your native backup/restore. Maybe both.
 
-Not sure I'm happy about this behavior, but it's kind of out of our control. Hopefully I raised some awareness and gave everyone something to consider. Thanks for reading!
+Not sure I'm happy about this behavior, but it's kind of out of our control. If nothing else I hope I raised some awareness and gave everyone something to consider. Thanks for reading!
