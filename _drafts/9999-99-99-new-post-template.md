@@ -6,6 +6,9 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
+<!-- Image and URL references used in this post -->
+
+<!-- Content -->
 
 # Header 
 
