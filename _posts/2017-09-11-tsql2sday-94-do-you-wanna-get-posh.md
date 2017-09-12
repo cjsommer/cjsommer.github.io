@@ -4,7 +4,6 @@ title: T-SQL Tuesday 94 - Do you wanna get PoSh?
 date: 2017-09-11 00:00
 author: cjsommer@gmail.com
 comments: true
-draft: true
 categories: [SQL Server]
 ---
 <!-- Image and URL references used in this post -->
@@ -46,7 +45,7 @@ About 10 years into my career as a DBA I had a great opportunity present itself.
 Of course one of the first things I looked for when I entered Windows Land was something similar to what I had been doing on Unix. Luckily for me PowerShell was starting to gain steam and it was a pretty natural fit for me. There are plenty of differences between PowerShell and bash, but the feel of the language made me feel right at home. I was up and running with PowerShell in no time.
 
 ## Do You Wanna Get Posh?!?!
-<div style="text-align:right"><img src ="/img/do_you_wanna_get_rocked.jpg" /></div>
+<div style="text-align:right"><img src ="/img/2017/08/do_you_wanna_get_rocked.jpg" /></div>
 So what can you do with PowerShell? I think the best way for me to answer is by telling you what I have done with PowerShell.
 
 Much of my early PowerShell scripting was simply gathering information about my SQL Servers. My bread and butter has to be the SQL Management Object libraries (a.k.a. SMO). SMO is a set of .NET libraries for interacting with SQL Server. Anything you can do using SQL Servers graphical tools (SSMS, SQL Configuration Manger) you can do using SMO and PowerShell. This has been a foundation of pretty much everything I've done with PowerShell as a SQL DBA. As time went on the tools I have built became more complex.
