@@ -18,18 +18,13 @@ categories: [SQL Server]
 
 ![T-SQL Tuesday][img_tsql2sday_logo]
 
+T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic ([blog][url_am_blog] &#124; [twitter][url_am_twitter]).
 
-T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic ([blog][url_am_blog] | [twitter][url_am_twitter]).
-
-
-This month's T-SQL Tuesday is being hosted by Rob Sewell ([blog][url_rob_blog] | [twitter][url_rob_twitter]). From his blog post:
-
+This month's T-SQL Tuesday is being hosted by Rob Sewell ([blog][url_rob_blog] &#124; [twitter][url_rob_twitter]). From his blog post:
 
 _This month’s topic: Let’s get all Posh – What are you going to automate today?_
 
-
 _It is no surprise to those that know me that I will choose PowerShell as the topic for this month. I am passionate about PowerShell because it has enabled me to have the career I have today and to visit numerous countries all around the world, meet people and talk about PowerShell. By my reckoning searching the TSQL Tuesday website it has been over 3 years since we had a topic specific to PowerShell. So I would like you to blog about PowerShell and SQL Server (or other interesting data platform products)_
-
 
 # Love me some PowerShell!
 Just like Rob, I am also passionate about PowerShell. I love it! I have been using it since PowerShell 2.0 came out and it's been my goto tool for automation and scripting ever since. But before I get to some of the things I've done with PowerShell let me tell you how I got here.
