@@ -6,6 +6,8 @@ author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
 ---
+# This month’s topic: Let’s get all Posh – What are you going to automate today?
+
 [img_tsql2sday_logo]: /img/TSQLTuesday.jpg
 [img_getrocked]: /img/2017/08/do_you_wanna_get_rocked.jpg
 [url_am_blog]: http://sqlblog.com/blogs/adam_machanic/
@@ -14,7 +16,6 @@ categories: [SQL Server]
 [url_rob_twitter]: https://twitter.com/sqldbawithbeard
 [url_dbatools]: https://dbatools.io/
 [url_sqlslack]: https://sqlcommunity.slack.com/
-
 
 ![T-SQL Tuesday][img_tsql2sday_logo]
 
