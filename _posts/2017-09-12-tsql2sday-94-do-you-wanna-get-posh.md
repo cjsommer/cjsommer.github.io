@@ -1,7 +1,7 @@
 ---
 layout: post
 title: T-SQL Tuesday 94 - Do you wanna get PoSh?
-date: 2017-09-12 00:00
+date: 2017-09-11 00:00
 author: cjsommer@gmail.com
 comments: true
 draft: true
