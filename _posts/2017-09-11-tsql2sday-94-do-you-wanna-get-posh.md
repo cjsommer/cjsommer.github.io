@@ -8,6 +8,7 @@ categories: [SQL Server]
 ---
 <!-- Image and URL references used in this post -->
 [img_tsql2sday_logo]: /img/TSQLTuesday.jpg
+[img_getrocked]: /img/2017/08/do_you_wanna_get_rocked.jpg
 [url_am_blog]: http://sqlblog.com/blogs/adam_machanic/
 [url_am_twitter]: https://twitter.com/AdamMachanic
 [url_rob_blog]: https://sqldbawithabeard.com/2017/09/05/tsql2sday-94-lets-get-all-posh/?utm_content=buffere68cc&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
@@ -16,7 +17,7 @@ categories: [SQL Server]
 [url_sqlslack]: https://sqlcommunity.slack.com/
 
 <!-- Content -->
-<div style="text-align:right"><img src ="/img/TSQLTuesday.jpg" /></div>
+![T-SQL Tuesday][img_tsql2sday_logo]
 
 T-SQL Tuesday is a monthly blog party for the SQL Server community (or Microsoft Data Platform community. Although it’s called T-SQL Tuesday, it’s not limited to SQL Server database engine only). It is the brainchild of Adam Machanic ([blog][url_am_blog] | [twitter][url_am_twitter]).
 
@@ -45,7 +46,8 @@ About 10 years into my career as a DBA I had a great opportunity present itself.
 Of course one of the first things I looked for when I entered Windows Land was something similar to what I had been doing on Unix. Luckily for me PowerShell was starting to gain steam and it was a pretty natural fit for me. There are plenty of differences between PowerShell and bash, but the feel of the language made me feel right at home. I was up and running with PowerShell in no time.
 
 ## Do You Wanna Get Posh?!?!
-<div style="text-align:right"><img src ="/img/2017/08/do_you_wanna_get_rocked.jpg" /></div>
+![Do You Wanna Get PoSh!][img_getrocked]
+
 So what can you do with PowerShell? I think the best way for me to answer is by telling you what I have done with PowerShell.
 
 Much of my early PowerShell scripting was simply gathering information about my SQL Servers. My bread and butter has to be the SQL Management Object libraries (a.k.a. SMO). SMO is a set of .NET libraries for interacting with SQL Server. Anything you can do using SQL Servers graphical tools (SSMS, SQL Configuration Manger) you can do using SMO and PowerShell. This has been a foundation of pretty much everything I've done with PowerShell as a SQL DBA. As time went on the tools I have built became more complex.
