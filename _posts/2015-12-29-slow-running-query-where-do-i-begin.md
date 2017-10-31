@@ -16,11 +16,13 @@ For the rest of this post I will be using the stored proc "spGetNames" as my pro
 Analyzing an execution plan is an art form and I'm somewhere between a kindergartner with finger paints and Picasso (much closer to the finger paints). Sometimes the problem sticks out like a sore thumb and sometimes not, but I think an execution plan is a good place to start.
 
 If you can run spGetNames safely against production, use SSMS and the "Include Actual Execution Plan" button. This will dump a graphical representation of the actual execution plan to SSMS and possibly help you determine where your query is running slow.
-<img class="alignnone size-full wp-image-1183 " src="/img/2015/12/slowquery_1.png" alt="" />
 
-If you can't run spGetNames safely in production, get it from the plan cache. Thank you to Jonathan Kehayias (<a href="https://www.sqlskills.com/blogs/jonathan/" target="_blank">B</a>|<a href="https://twitter.com/SQLPoolBoy" target="_blank">T</a>) over at SQLSkills for providing the basic query that I used. I just modified it to search for a specific query text. Jonathan's original query can be found <a href="https://www.sqlskills.com/blogs/jonathan/tuning-cost-threshold-for-parallelism-from-the-plan-cache/">here</a>. Below is my modified query. You just have to alter the WHERE clause to search for your query.
+[img_slowquery]: /img/2015/12/slowquery_1.png
+![My Slow Query][img_slowquery]
 
-+EDIT: I'd like to thank Mike Fal (<a href="http://www.mikefal.net/" target="_blank">B</a>|<a href="https://twitter.com/Mike_Fal" target="_blank">T</a>) for helping point out that the plans that come from the plan cache are estimated plans. Most of the time they will be the same as the actual plan, but there times where that may not be true, but it's a very important point to note.
+If you can't run spGetNames safely in production, get it from the plan cache. Thank you to Jonathan Kehayias (<a href="https://www.sqlskills.com/blogs/jonathan/" target="_blank">B</a> &#124; <a href="https://twitter.com/SQLPoolBoy" target="_blank">T</a>) over at SQLSkills for providing the basic query that I used. I just modified it to search for a specific query text. Jonathan's original query can be found <a href="https://www.sqlskills.com/blogs/jonathan/tuning-cost-threshold-for-parallelism-from-the-plan-cache/">here</a>. Below is my modified query. You just have to alter the WHERE clause to search for your query.
+
++EDIT: I'd like to thank Mike Fal (<a href="http://www.mikefal.net/" target="_blank">B</a> &#124; <a href="https://twitter.com/Mike_Fal" target="_blank">T</a>) for helping point out that the plans that come from the plan cache are estimated plans. Most of the time they will be the same as the actual plan, but there times where that may not be true, but it's a very important point to note.
 
 ```sql
 SELECT  
@@ -48,7 +50,7 @@ TIME and IO statistics can tell you a lot about spGetNames. I find these stats v
 
 <img class="alignnone size-full wp-image-1188 " src="/img/2015/12/slowquery_3.png" alt="" />
 
-But that's not the coolest part. Richie Rump (<a href="http://www.jorriss.net/" target="_blank">B</a>|<a href="https://twitter.com/Jorriss" target="_blank">T</a>) has built an online tool that will parse your statistics output and give you a friendlier view of the data. The URL for this awesome tool is <a href="http://statisticsparser.com/index.html#" target="_blank">StatisticsParser</a>. All you have to do is to paste the statistics output from the SSMS message box and hit the parse button and whala...a nice display of the query statistics. This isn't a great example because the query I used is pretty simple, but hopefully you get the idea.
+But that's not the coolest part. Richie Rump (<a href="http://www.jorriss.net/" target="_blank">B</a> &#124; <a href="https://twitter.com/Jorriss" target="_blank">T</a>) has built an online tool that will parse your statistics output and give you a friendlier view of the data. The URL for this awesome tool is <a href="http://statisticsparser.com/index.html#" target="_blank">StatisticsParser</a>. All you have to do is to paste the statistics output from the SSMS message box and hit the parse button and whala...a nice display of the query statistics. This isn't a great example because the query I used is pretty simple, but hopefully you get the idea.
 
 <img class="alignnone size-full wp-image-1191 " src="/img/2015/12/img_5682c8128e7e8.png" alt="" />
 
