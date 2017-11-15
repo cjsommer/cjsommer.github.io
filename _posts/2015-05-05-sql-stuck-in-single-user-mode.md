@@ -14,6 +14,7 @@ HELP! My database is stuck in single user mode!
 I answered this twitter post a while back and figured it would make a fun blog post.
 
 So what do I mean that the database is stuck in single user mode? Simply speaking, it means that the database is in single user mode and you can't seem to get it back into multi user mode. As an example I set my local AdventureWorks2012 database to single user mode, opened a session to that database, tried an alter database to get it back to multi user and this is what I got.
+
 ---
 [img_single_user_1]: /img/2015/05/SingleUser_1.jpg
 ![I'm stuck!][img_single_user_1] 
