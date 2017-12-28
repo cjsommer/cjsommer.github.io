@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stairway to RDS for SQL Server - Create an RDS Instance
-date: 2017-09-15 00:00
+date: 2018-01-09 00:00
 author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stairway to Amazon's RDS for SQL Server - Account Setup
-date: 2017-11-21 00:00
+date: 2018-01-02 00:00
 author: cjsommer@gmail.com
 comments: true
 categories: [SQL Server]
@@ -18,9 +18,9 @@ categories: [SQL Server]
 
 <!-- Content -->
 # Stairway to RDS for SQL Server
-So you want to run SQL Server in Amazon Web Services Relational Database Service (AWS/RDS)? Amazon has done a great job providing SQL Server as a service through their RDS platform. One of the main attractions of moving to a PaaS type offering is that a lot of infrastructure management is handled by the cloud provider. In RDS, Amazon takes care of the underlying hardware, the operating system (including patching), minor SQL Server version upgrades, and last but certainly not least your SQL Server backups. Those are some really attractive reasons to move to the cloud, but they don't come without a cost and a few limitations. Managing SQL Server in RDS isn't quite as hands-off as you might think, and if you're a seasoned SQL Server veteran you will notice some differences in managing your instances in RDS.
+So you want to run SQL Server in Amazon Web Services, Relational Database Service? Wow, that is a very long name so I am just going to call it RDS from here on out. Amazon has done a great job providing SQL Server as a service through their RDS platform. One of the main attractions of moving to a PaaS type offering is that a lot of infrastructure management is handled by the cloud provider. In RDS, Amazon takes care of the underlying hardware, the operating system (including patching), minor SQL Server version upgrades, and last but certainly not least your SQL Server backups. Those are some really attractive reasons to move to the cloud, but they don't come without a cost and a few limitations. Managing SQL Server in RDS isn't quite as hands-off as you might think, and if you're a seasoned SQL Server veteran you will notice some differences in managing your instances in RDS.
 
-During this blog series I am hoping help get you up to speed and on your way to working with AWS/RDS. Below is an outline of the posts I am planning, but I'll be keeping an eye on user feedback so I can adjust or add topics based on that as well. 
+During this blog series I am hoping help get you up to speed and on your way to working with RDS. Below is an outline of the posts I am planning, but I'll be keeping an eye on user feedback so I can adjust or add topics based on that as well. 
 
 [url_stairway_rds_post_1]: /2017-11-21-stairway-to-rds-sqlserver-step1-account.html
 
