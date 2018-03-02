@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SQL Saturday 723, March 24, 2018 in Rochester, NY. Join us and kick your SQL Server knowlege up a notch!
-date: 2017-03-02 20:00
+date: 2018-03-02 20:00
 author: cjsommer@gmail.com
 comments: true
 categories: [PowerShell, SQL Server]
