@@ -25,7 +25,7 @@ I just sat quietly and listened while some of the stories opened my eyes me to a
 
 My favorite statement during the session was addressed to all of the men in attendance. This may not be the exact words, but it went something like this:
 
-"Men, please teach your daughters about the challenges they will face in the workplace, but make sure you also teach your sons."
+_"Men, please teach your daughters about the challenges they will face in the workplace, but make sure you also teach your sons."_
 
 I think the underlying message there is that everyone plays a part in eliminating the gender bias that exists for Women in Technology. Women already know the challenges they face - they're living it! Talking about it in an open forum with men will raise awareness and hopefully together we can help balance the ship.
 
