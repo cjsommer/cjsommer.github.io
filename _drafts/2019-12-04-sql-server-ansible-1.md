@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ansible for the SQL Server DBA | Part 1 | Why Ansible
-date: 202019-12-03 17:00
+date: 2019-12-04 12:00
 author: cjsommer@gmail.com
 comments: true
 categories: [automation]
@@ -45,14 +45,13 @@ So why Ansible instead of the others? Well for me it was mostly because the DevO
 ## What is Ansible good for?
 ---
 Configuring a server 
-- Configure networking
-- Joining a domain
-- Setting hostname 
+- Setting hostname & joining a domain
+- Set up directory structures
+- Configure system environment variables
 
 Installing software
-- [Chocolatey][url_choco]
-- MSI's
-- EXE's
+- via [Chocolatey][url_choco]
+- From MSIs and EXEs
 
 Configuring software
 - SQL Server
