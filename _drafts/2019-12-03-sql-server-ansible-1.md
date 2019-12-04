@@ -15,7 +15,7 @@ categories: [automation]
 [url_choco]: https://chocolatey.org/
 [url_terraform]: https://www.terraform.io/
 [url_cloudformation]: https://aws.amazon.com/cloudformation/
-[img_ansible_logo]: ../img/2019/12/ansible-logo.png
+[img_ansible_logo]: /img/2019/12/ansible-logo.png
 [url_sql_ansible_1]: /2019-12-04-sql-server-ansible-1/
 
 # Ansible for the SQL Server DBA | Part 1 | Why Ansible
