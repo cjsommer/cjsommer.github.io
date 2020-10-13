@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Query Data Store Forced Plans - Gotchas and Limitations
+share-img: http://www.cjsommer.com/img/2020/10/qds_tech_debt.jpg
 date: 2020-10-13 00:00
 author: cjsommer@gmail.com
 comments: true
@@ -11,6 +12,7 @@ categories: [SQL Server]
 [img_qds_force_plan]: /img/2020/10/qds_force_plan.png
 [img_qds_tech_debt]: /img/2020/10/qds_tech_debt.jpg
 [img_qds_purge]: /img/2020/10/qds_purge.png
+[img_qds_no_soup]: /img/2020/10/qds_no_soup_for_you.png
 
 [url_qds_ms]: https://docs.microsoft.com/en-us/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store
 
@@ -32,6 +34,8 @@ One of QDS signature abilities allows you to force a plan for a specific query. 
 ...but I don't believe in silver bullets (or werewolves for that matter). While forced plans are amazing and have gotten me out of a number of sticky situations, they do come with their own set of gotchas and limitations.
 
 ## GOTCHA #1 - Availability Group read only replicas? No pinned plans for you!
+<img src="/img/2020/10/qds_no_soup_for_you.png" alt="No forced plans for you!" align="right">
+
 You're already using Availability Groups and you decide you want to offload some of your read workload off to a readable secondary. Sounds like a great solution trying to scale out a bit. If you're leveraging forced plans you're kinda out of luck. Forced plans are only honored on the primary replica. SQL Server will not use forced plans on secondary replicas. There currently is no way around this, although there are plenty of bitches, gripes, and complaints about it in the SQL Server community. 
 
 ## GOTCHA #2 - The Footgun
