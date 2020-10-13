@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Happy Veterans Day to my SQL Brothers and Sisters!
-share-img: /img/2018/11/summit-veteran-3.jpg
+share-img: http://www.cjsommer.com/img/2018/11/summit-veteran-3.jpg
 date: 2018-11-11 12:00
 author: cjsommer@gmail.com
 comments: true
