@@ -93,10 +93,10 @@ url-pretty: "www.cjsommer.com"  # eg. "deanattali.com/beautiful-jekyll"
 disqus: "cjsommer"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-61701088-1"
+google_analytics: "UA-61701088-1" 
 
 # Google Tag Manager ID
-#gtm: ""
+gtm: "UA-61701088-1"
 
 # Facebook App ID
 # fb_app_id: ""
