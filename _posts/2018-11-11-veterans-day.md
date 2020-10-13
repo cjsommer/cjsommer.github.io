@@ -4,7 +4,7 @@ title: Happy Veterans Day to my SQL Brothers and Sisters!
 date: 2018-11-11 12:00
 author: cjsommer@gmail.com
 comments: true
-image: /img/2018/11/summit-veteran-3.jpg
+twitter-image: /img/2018/11/summit-veteran-3.jpg
 categories: [professional]
 ---
 # Thank you all for your service! #
