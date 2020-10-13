@@ -2,6 +2,7 @@
 layout: post
 title: Query Data Store Forced Plans - Gotchas and Limitations
 share-img: http://www.cjsommer.com/img/2020/10/qds_tech_debt.jpg
+meta-description: Released with SQL Server 2016, QDS was a game changer for performance tuning. Forced plans are an amazing tool for the DBA toolbox, but they do come with a few things you should know about.
 date: 2020-10-13 00:00
 author: cjsommer@gmail.com
 comments: true
