@@ -33,14 +33,14 @@ One of QDS signature abilities allows you to force a plan for a specific query. 
 
 ...but I don't believe in silver bullets (or werewolves for that matter). While forced plans are amazing and have gotten me out of a number of sticky situations, they do come with their own set of gotchas and limitations.
 
----
+<br>
 
 ## GOTCHA #1 - Availability Group read only replicas? No pinned plans for you!
 <img src="/img/2020/10/qds_no_soup_for_you.png" alt="No forced plans for you!" align="right">
 
 You're already using Availability Groups and you decide you want to offload some of your read workload off to a readable secondary. Sounds like a great solution trying to scale out a bit. If you're leveraging forced plans you're kinda out of luck. Forced plans are only honored on the primary replica. SQL Server will not use forced plans on secondary replicas. There currently is no way around this, although there are plenty of bitches, gripes, and complaints about it in the SQL Server community. 
 
----
+<br>
 
 ## GOTCHA #2 - The Footgun
 Once in a while SQL Server gives you the ability to shoot yourself in the face. QDS forced plans are no exception with the "Purge Query Data" button that you see in the GUI (as well as the matching T-SQL command). 
@@ -49,7 +49,7 @@ Once in a while SQL Server gives you the ability to shoot yourself in the face. 
 
 The purge button does not discriminate. When it say purge, it means purge all the things, which includes any forced plans you have. If you're leveraging forced plans to fine tune your workload this could spell certain disaster on a production system. You can imagine that this risk goes up on how much you're actually using it.
 
----
+<br>
 
 ## GOTCHA #3 - Why won't my query use my new index?
 Once you have a forced plan in place, you may not benefit from new indexes in the future. Lets take this example:
@@ -58,7 +58,7 @@ You get a ticket asking you to look at the performance for a query. Upon investi
 
 This is a bit contrived example but it's not far from what could happen. How much time did you waste? How many other queries are sitting out there like this?
 
----
+<br>
 
 ## GOTCHA #4 - Keeping forced plans in sync across all environments
 So you've pinned a plan in production to "fix" a bad query plan. This becomes a very large part of how that query performs from that point forward. If you do any sort of performance testing in lower environment you'd probably want to keep the forced plans there in sync with what's in production to ensure your performance profiles match. So how do you keep your forced plans in sync in lower environments, or do you even attempt to do it at all? 
@@ -69,7 +69,7 @@ If you're lucky enough to be using stored procedures then this won't be awful to
 
 If you regularly refresh your lower environments from production backups then this won't be a big deal because the forced plans come with the database. But I know some of us don't do that. 
 
----
+<br>
 
 # QDS Forced Plans - It's not all bad
 As a matter of fact I think it's an amazing feature to have in a pinch. It's saved me a number of times when a query has gone south and I needed to fix the performance immediately. I guess the key phrase there is "in a pinch" because forced plans come with a cost, and I consider that cost technical debt. 
