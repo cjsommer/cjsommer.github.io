@@ -19,7 +19,6 @@ categories: [SQL Server]
 
 <!-- Content -->
 
-# QDS Forced Plans Gotchas and Limitations
 <img src="/img/2020/10/qds_tech_debt.jpg" alt="QDS Forced Plans" align="right">
 
 Released with SQL Server 2016, Query Data Store was a game changer for performance tuning. Right from Microsoft's website: 
