@@ -41,7 +41,7 @@ You're already using Availability Groups and you decide you want to offload some
 ## GOTCHA #2 - The Footgun
 Once in a while SQL Server gives you the ability to shoot yourself in the face. QDS forced plans are no exception with the "Purge Query Data" button that you see in the GUI (as well as the matching T-SQL command). 
 
-![QDS Purge](img_qds_purge)
+![QDS Purge][img_qds_purge]
 
 The purge button does not discriminate. When it say purge, it means purge all the things, which includes any forced plans you have. If you're leveraging forced plans to fine tune your workload this could spell certain disaster on a production system. You can imagine that this risk goes up on how much you're actually using it.
 
