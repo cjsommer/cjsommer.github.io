@@ -9,17 +9,14 @@ comments: true
 image: /img/2020/10/qds_tech_debt.jpg
 categories: [SQL Server]
 ---
-<!-- Image and URL references used in this post -->
+Released with SQL Server 2016, Query Data Store was a game changer for performance tuning. Right from Microsoft's website:  _The SQL Server Query Store feature provides you with insight on query plan choice and performance. It simplifies performance troubleshooting by helping you quickly find performance differences caused by query plan changes. Query Store automatically captures a history of queries, plans, and runtime statistics, and retains these for your review. It separates data by time windows so you can see database usage patterns and understand when query plan changes happened on the server._
+
+<!-- Image and URL references used in this post. Should go after the initial blurb -->
 [img_qds_force_plan]: /img/2020/10/qds_force_plan.png
 [img_qds_tech_debt]: /img/2020/10/qds_tech_debt.jpg
 [img_qds_purge]: /img/2020/10/qds_purge.png
 [img_qds_no_soup]: /img/2020/10/qds_no_soup_for_you.png
-
 [url_qds_ms]: https://docs.microsoft.com/en-us/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store
-
-<!-- Content -->
-
-Released with SQL Server 2016, Query Data Store was a game changer for performance tuning. Right from Microsoft's website:  _The SQL Server Query Store feature provides you with insight on query plan choice and performance. It simplifies performance troubleshooting by helping you quickly find performance differences caused by query plan changes. Query Store automatically captures a history of queries, plans, and runtime statistics, and retains these for your review. It separates data by time windows so you can see database usage patterns and understand when query plan changes happened on the server._
 
 [Official QDS documentation from microsoft.com][url_qds_ms]
 
