@@ -68,7 +68,7 @@ footer-links-active:
   google-plus: true
   github: true
   reddit: false
-  linkedin: false
+  linkedin: true
   xing: false
   stackoverflow: false
   snapchat: false
