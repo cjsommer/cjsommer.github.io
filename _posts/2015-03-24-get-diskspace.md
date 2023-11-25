@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get-DiskSpace
-date: 2015-03-24 17:40
+date: 2015-03-24 17:00
 author: cjsommer@gmail.com
 comments: true
 categories: [PowerShell]
