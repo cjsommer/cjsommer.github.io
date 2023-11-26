@@ -1,0 +1,107 @@
+baseurl = "https://uwww.cjsommer.com"
+DefaultContentLanguage = "en"
+title = "cjsommer.com"
+enableEmoji = true
+# Using theme as git submodule 
+theme = "beautifulhugo"
+# Or when using theme as hugo module
+# theme = "github.com/halogenica/beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#pygmentsUseClassic = true
+#pygmentOptions = "linenos=inline"
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Params]
+  homeTitle = "cjsommer.com" # Set a different text for the header on the home page
+  subtitle = "Automate all the things!"
+  mainSections = ["post","posts"]
+  logo = "img/cjsommer-avatar-2.jpg" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+  readingTime = false
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+  hideAuthor = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+#  disclaimerText = "The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way."
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
+  name = "Chris Sommer"
+  website = "cjsommer.com"
+  email = "cjsommer@gmail.com"
+  github = "cjsommer"
+  twitter = "sommerc70"
+  linkedin = "cjsommer"
+  #facebook = "username"
+  #gitlab = "username"
+  #bitbucket = "username"
+  #reddit = "username"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  #instagram = "username"
+  #youtube = "user/username" # or channel/channelname
+  #soundcloud = "username"
+  #spotify = "username"
+  #bandcamp = "username"
+  #itchio = "username"
+  #vk = "username"
+  #paypal = "username"
+  #telegram = "username"
+  #500px = "username"
+  #codepen = "username"
+  #mastodon = "url"
+  #kaggle = "username"
+  #weibo = "username"
+  #slack = "username"
+  #medium = "username"
+  #discord = "invite code (https://discord.gg/XXXXXXX)"
+  #strava = "userid"
+
+[[menu.main]]
+    name = "Home"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "SQL Server"
+    url = "tags/sql-server/"
+    weight = 2
+
+[[menu.main]]
+    name = "PowerShell"
+    url = "tags/powershell/"
+    weight = 3
+
+[[menu.main]]
+    name = "Professional"
+    url = "tags/professional/"
+    weight = 4
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 5
