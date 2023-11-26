@@ -1,4 +1,4 @@
-name: Build and Publish GitHub Pages
+name: Build and Deploy GitHub Pages
 
 on:
   push:
@@ -22,15 +22,14 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.120.4'
-          # extended: true
+          hugo-version: 'latest'
 
       - name: Build
         run: hugo --minify
 
       - name: Deploy
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
