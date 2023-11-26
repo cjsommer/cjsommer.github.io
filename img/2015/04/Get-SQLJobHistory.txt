@@ -1,0 +1,46 @@
+﻿
+function Get-SQLJobHistory
+{
+    param (
+        [string]$SQLServer, 
+        [datetime]$BeginDate, 
+        [datetime]$EndDate
+    )
+    # Create an SMO Server object and initialize some variables for use in the loop
+    $oServer = New-Object "Microsoft.SqlServer.Management.Smo.Server" $SQLServer ;
+    $oServer.ConnectionContext.Connect() ;
+    $job = $null ;
+    $JobHistory = $null ;
+
+	# Get the job history for each job
+	foreach($job in $oServer.JobServer.Jobs | 
+        Where-Object { ($_.IsEnabled -eq $true) `
+                  -and ($_.LastRunDate -ge $BeginDate) `
+                  -and ($_.LastRunDate -le $EndDate) } ) 
+    {          
+        $tmpJobHistory = $null ;
+        $tmpJobHistory = $job.EnumHistory() | 
+            Where-Object { ($_.StepID -eq "0") `
+                      -and ($_.RunDate -ge $BeginDate) `
+                      -and ($_.RunDate -le $EndDate) } ;
+        $JobHistory += $tmpJobHistory ;
+	}
+    $JobHistory ;
+}
+
+Push-Location; Import-Module SQLPS -DisableNameChecking; Pop-Location ;
+
+$History = Get-SQLJobHistory -SQLServer "localhost\inst1" `
+                             -BeginDate '2015-04-01 00:00:00' `
+                             -EndDate $(Get-Date) ;
+
+# Fancy way to remap the RunStatus, which is an integer, to human readable text
+$RunStatus = @{'0'="Failed";'1'="Succeeded";'2'="Retry";'3'="Cancelled"}
+$RunStatusColumn = @{
+    Name = 'RunStatus'
+    Expression = { $RunStatus.($_.RunStatus.ToString()) }
+}
+
+# Now Output the Results. Notice the reference to the hash table for RunStatus
+$History | Select-Object JobName,RunDate,$RunStatusColumn | 
+    Sort-Object JobName,RunDate | Format-Table -AutoSize ;
