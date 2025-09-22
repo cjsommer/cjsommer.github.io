@@ -2,7 +2,7 @@
 layout: post
 title: Who is cjsommer?
 subtitle: SQL DBA problem solver extraordinaire!
-date: 2015-03-24 17:17
+date: 2015-03-24T17:17:00
 author: cjsommer@gmail.com
 comments: true
 tags: ["About Me"]

@@ -1,0 +1,15 @@
+﻿# Hugo generated files
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Cache and temporary files
+.DS_Store # macOS specific
+Thumbs.db # Windows specific
+*.log
+*.bak
+*.swp # Vim swap files
+*~ # Emacs backup files
+
+# Environment specific files
+.env

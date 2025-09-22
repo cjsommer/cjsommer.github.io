@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get-DiskSpace
-date: "2015-03-24T17:40"
+date: "2015-03-24T17:40:00"
 author: cjsommer@gmail.com
 comments: true
 tags: ["Powershell"]

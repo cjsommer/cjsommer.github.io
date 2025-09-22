@@ -2,7 +2,7 @@ baseurl = "https://www.cjsommer.com"
 DefaultContentLanguage = "en"
 title = "cjsommer.com"
 enableEmoji = true
-# Using theme as git submodule 
+# Using theme as git submodule
 theme = "beautifulhugo"
 # Or when using theme as hugo module
 # theme = "github.com/halogenica/beautifulhugo"
@@ -14,6 +14,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [Params]
   homeTitle = "cjsommer.com" # Set a different text for the header on the home page
