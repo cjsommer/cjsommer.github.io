@@ -1,6 +1,6 @@
 ---
 layout: post
-title: So Long, Olo
+title: So Long, Olo!
 date: 2025-09-23T03:00:00
 author: cjsommer@gmail.com
 comments: true
