@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: Approaching Big Problems
-date: 2025-10-25T01:00:00
+date: 2025-10-23T01:00:00
 author: cjsommer@gmail.com
 comments: true
 tags: ["Professional"]
